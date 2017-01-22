@@ -31,3 +31,7 @@ Route::get('check' , function(){
 
 Route::post('login_request', 'userLoginController@registerMe');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
