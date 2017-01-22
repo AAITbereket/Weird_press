@@ -20,6 +20,7 @@ class userLoginController extends Controller
         $user = new User;
         $user->UserName = $request->UserName;
         $user->password = md5($request->password);
+        print_r($request);
         $user->save;
     }
     
