@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>VascuTech Admin-_Login</title>
+<title>Login</title>
 <!-- For-Mobile-Apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,8 +15,7 @@
 <body>
 <div class="container">
 <br/>
-<br/>
-<br/>
+
 <br/> <br/>
 <br/>
 	<div class="signin" class="col-sm-4">
@@ -38,7 +37,7 @@
 					<input id="email" type="email" class="user" name="email" value="{{ old('email') }}" required autofocus>
 
 					@if ($errors->has('email'))
-						<span class="help-block">
+						<span class="help-block" style="color: red;">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
 					@endif
@@ -64,6 +63,9 @@
 					<div class="checkbox">
 						<label>
 							<input type="checkbox" name="remember"> Remember Me
+						</label>
+						<label style="float: right; ">
+							<a href="{{ url('/register_custom') }}" style="color: #ff864c;">Register</a>
 						</label>
 					</div>
 				</div>
