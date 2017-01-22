@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <link href="/Admin_panel_/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="/Admin_panel_/css/custom.min.css" rel="stylesheet">
+    <link href="/Admin_panel_/css/custom.css" rel="stylesheet">
   </head>
 
   <body class="nav-md">

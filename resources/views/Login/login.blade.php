@@ -22,9 +22,9 @@
 <br/> <br/>
 <br/>
 	<div class="signin" class="col-sm-4">
-     	<form method="post" action="login">
-	      	<input id="check" type="text" name="UserName" class="user"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required />
-	      	<input type="password" name="password" class="pass"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required />
+     	<form method="post" action="login_request">
+	      	<input id="check" type="text" name="UserName" class="user"  required />
+	      	<input type="password" name="password" class="pass" required />
 	      	<?php  echo csrf_field(); ?>
           	<input type="submit" value="Login" />
 	 	</form>

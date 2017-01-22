@@ -22,3 +22,12 @@ Route::get('login', function(){
 Route::get('admin_panel', function(){
     return view('admin_panel_DIR/admin_panel_view');
 });
+
+Route::get('check' , function(){
+    return view('check');
+});
+
+//Route::post('login_request', 'userLoginController@doLogin');
+
+Route::post('login_request', 'userLoginController@registerMe');
+
