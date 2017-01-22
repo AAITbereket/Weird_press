@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('login', function(){
+    return view('Login/login');
+});
+
+Route::get('admin_panel', function(){
+    return view('admin_panel_DIR/admin_panel_view');
+});
