@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', function(){
-    return view('Login/login');
+Route::get('login_', function(){
+    return view('Login/login_temp');
 });
 
 Route::get('admin_panel', function(){
