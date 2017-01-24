@@ -18,7 +18,7 @@
   </head>
 
   <body class="nav-md">
-    <div class="container body">
+    <div class="container body" style="width: 100%;">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
@@ -81,7 +81,7 @@
             <nav>
               
 
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                     <img src="/Admin_panel_/img/img.jpg" alt="">{{ Auth::user()->name }}
@@ -109,18 +109,18 @@
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
-
+        <div class="col-md-10 right_col" role="main">
+              @yield('content')
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-          </div>
-          <div class="clearfix"></div>
-        </footer>
+        {{--<footer>--}}
+          {{--<div class="pull-right">--}}
+            {{--Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>--}}
+          {{--</div>--}}
+          {{--<div class="clearfix"></div>--}}
+        {{--</footer>--}}
         <!-- /footer content -->
       </div>
     </div>

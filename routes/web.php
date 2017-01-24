@@ -27,6 +27,10 @@ Route::get('check' , function(){
     return view('check');
 });
 
+Route::get('lonely' , function(){
+    return view('lonely');
+});
+
 Route::get('register_custom' , function(){
     return view('Register.register_custom');
 });
