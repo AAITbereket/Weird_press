@@ -18,7 +18,7 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/materializeX/css/normalize.css">
-  <link rel="stylesheet" href="/materializeX/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/materializeX/font/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="/materializeX/css/materialize.min.css" media="screen,projection" />
   <link rel="stylesheet" href="/materializeX/css/bootstrap.css" media="screen,projection" />
 
@@ -49,18 +49,18 @@
 
 <body>
 
-  <!-- Preloader --> 
+  <!-- Preloader -->
     <div id="preloader">
       <div class="loader">
             <svg class="circle-loader" height="50" width="50">
               <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10" />
             </svg>
-        </div>    
+        </div>
     </div><!--preloader end-->
 
   <!-- Main Container -->
   <main id="app" class="main-section">
-  
+
     <!-- Home Section start -->
     <section id="home" class="scroll-section root-sec grey lighten-5 home-wrap">
       <div class="sec-overlay">
@@ -281,7 +281,8 @@
   <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
   <script src="/materializeX/js/gmaps.js"></script>
   <script src="/materializeX/js/owl.carousel.min.js"></script>
-  <script src="/materializeX/js/materialize.min.js"></script>
+  {{--<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>--}}
+  <script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
   <script src="/materializeX/js/jwplayer.js"></script>
   <script src="/materializeX/js/sweet-alert.min.js"></script>
   <script src="/materializeX/js/common.js"></script>
