@@ -15,6 +15,7 @@
     <link href="/Admin_panel_/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/Admin_panel_/css/custom.css" rel="stylesheet">
+
   </head>
 
   <body class="nav-md">
@@ -53,9 +54,9 @@
         </div>
         <!-- /top navigation -->
 
-        <div class="row">
+        <div class="row" id="main_main">
 
-          <div class="col-md-3 left_col">
+          <div class="col-md-3 left_col" id="leftCol" >
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
                 <a href="index.html" class="site_title"> <span>Gentellela Alela!</span></a>

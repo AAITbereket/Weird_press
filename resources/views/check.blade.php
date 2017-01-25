@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="" style="max-width: 990px; padding-top: 55px;" >
+    <div class="" style="max-width: 990px;" id="main_display">
 
 
         <head>
@@ -215,7 +215,7 @@
 
 
         <!-- Section: contact -->
-        <section id="contact" class="home-section text-center">
+        <section id="contact" class="home-section text-center" style="padding-bottom: 70px;">
             <div class="heading-contact">
                 <div class="container">
                     <div class="row">
@@ -287,7 +287,7 @@
         </section>
         <!-- /Section: contact -->
 
-        <footer style="margin-left: 0; min-width: 990px">
+        <footer style="margin-left: 0; min-width: 990px ; padding: 0 0 0 0;" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
@@ -313,6 +313,15 @@
         <script src="/lonely/js/custom.js"></script>
 
 
+            <script>
+                var Main_div_height = $("body").prop('scrollHeight');
+
+//                Main_div_height += $('footer').height();
+                alert(Main_div_height);
+                $("#leftCol").css('height',Main_div_height);
+            </script>
+
+       </body>
     </div>
 
 @endsection
