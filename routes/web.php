@@ -28,7 +28,11 @@ Route::get('check' , function(){
 });
 
 Route::get('lonely' , function(){
-    return view('lonely');
+    return view('lonely.lonely');
+});
+
+Route::get('materializeX' , function(){
+    return view('materializeX.materializeX');
 });
 
 Route::get('register_custom' , function(){
