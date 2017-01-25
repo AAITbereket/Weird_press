@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="" style="max-width: 870px; padding-top: 55px;" >
+    <div class="" style="max-width: 990px; padding-top: 55px;" >
 
 
         <head>
@@ -25,6 +25,16 @@
             <link href="/lonely/css/style.css" rel="stylesheet">
             <link href="/lonely/color/default.css" rel="stylesheet">
 
+
+
+            <style>
+
+            .container
+                {
+                    width:990px;
+                 }
+
+            </style>
         </head>
 
         <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
@@ -48,11 +58,11 @@
         <!-- /Section: intro -->
 
         <!-- Navigation -->
-        <div id="navigation">
+        <div id="navigation" style="margin-left: -10px; width: 990px">
             <nav class="navbar navbar-custom" role="navigation">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-10">
 
                             <!-- Brand and toggle get grouped for better mobile display -->
                             <div class="navbar-header">
@@ -61,7 +71,8 @@
                                 </button>
                             </div>
                             <!-- Collect the nav links, forms, and other content for toggling -->
-                            <div class="collapse navbar-collapse" id="menu">
+
+                            <div class="collapse navbar-collapse" >
                                 <ul class="nav navbar-nav">
                                     <li class="active"><a href="#intro">Home</a></li>
                                     <li><a href="#about">About Me</a></li>
@@ -83,7 +94,7 @@
         <section id="about" class="home-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 ">
+                    <div class="col-lg-12 ">
 
                         <div class="section-heading text-center">
                             <div class="wow bounceInDown" data-wow-delay="0.2s">
@@ -98,11 +109,11 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
 
                         <img src="/lonely/img/img1.jpg" class="img-responsive img-rounded" alt="" />
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <p><strong>You'll fall in love with me at the first sight</strong></p>
                         <p>
                             Lorem ipsum dolor sit amet, ei purto tamquam ceteros his, eos in graece posidonium.
@@ -121,7 +132,7 @@
         <!-- /Section: about -->
 
         <!-- Section: separator -->
-        <section id="separator" class="home-section parallax text-center" data-stellar-background-ratio="0.5">
+        <section id="separator" class="home-section parallax text-center"  style="min-width: 990px" data-stellar-background-ratio="0.5">
 
             <div class="container">
                 <div class="row">
@@ -168,7 +179,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 ">
+                    <div class="col-lg-12 ">
                         <div class="wow bounceInDown" data-wow-delay="0.4s">
                             <div class="section-heading">
                                 <h2>My photo gallery</h2>
@@ -181,7 +192,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-md-8 col-lg-8" >
+                    <div class="col-sm-8 col-md-8 col-lg-12" >
                         <div class="wow bounceInUp" data-wow-delay="0.4s">
                             <div id="owl-works" class="owl-carousel">
                                 <div class="item"><a href="/lonely/img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
@@ -208,7 +219,7 @@
             <div class="heading-contact">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-8 ">
+                        <div class="col-lg-12 ">
 
                             <div class="section-heading">
                                 <div class="wow bounceInDown" data-wow-delay="0.4s">
@@ -224,7 +235,7 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-8 ">
+                    <div class="col-lg-8 col-md-offset-2 ">
                         <div class="form-wrapper marginbot-50">
                             <form id="contact-form">
                                 <div class="row">
@@ -276,10 +287,10 @@
         </section>
         <!-- /Section: contact -->
 
-        <footer>
+        <footer style="margin-left: 0; min-width: 990px">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-lg-8">
+                    <div class="col-md-12 col-lg-12">
                         <p>&copy;Copyright 2014 . Alice Lonely . design by <a href="">Bootstraptaste</a></p>
                     </div>
                 </div>
