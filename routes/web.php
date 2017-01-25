@@ -27,6 +27,10 @@ Route::get('check' , function(){
     return view('check');
 });
 
+Route::get('materializeX_check' , function(){
+    return view('materializeXcheck');
+});
+
 Route::get('lonely' , function(){
     return view('lonely.lonely');
 });

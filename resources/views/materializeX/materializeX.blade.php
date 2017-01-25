@@ -271,6 +271,7 @@
 
   <!-- JavaScripts -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="/materializeX/js/jquery-1.11.1.min.js"></script>
   <script src="/materializeX/js/jquery.easing.1.3.js"></script>
   <script src="/materializeX/js/detectmobilebrowser.js"></script>
   <script src="/materializeX/js/isotope.pkgd.min.js"></script>

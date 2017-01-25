@@ -19,7 +19,7 @@
   </head>
 
   <body class="nav-md">
-    <div class="container body" style="width: 100%;">
+    <div class="container body" style="width: 100%; max-width:100%">
       <div class="main_container">
 
         <div class="top_nav">
