@@ -1,4 +1,4 @@
-@extends('admin_panel_DIR.admin_panel_view')
+@extends('../admin_panel_DIR/admin_panel_view')
 
 
 @section('content')
@@ -32,6 +32,7 @@
 
             <link rel="stylesheet" href="/materializeX/css/main.css">
             <link rel="stylesheet" href="/materializeX/css/responsive.css">
+
 
             <!-- Choose your default colors -->
             <link rel="stylesheet" href="/materializeX/css/colors/color1.css">
@@ -283,7 +284,7 @@
 
         <!-- JavaScripts -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script src="/materializeX/js/jquery-1.11.1.min.js"></script>
+        <script src="/materializeX/js/jquery.min.js"></script>
         <script src="/materializeX/js/jquery.easing.1.3.js"></script>
         <script src="/materializeX/js/detectmobilebrowser.js"></script>
         <script src="/materializeX/js/isotope.pkgd.min.js"></script>

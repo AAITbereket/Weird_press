@@ -19,6 +19,7 @@
     <link href="/lonely/css/animate.css" rel="stylesheet" />
     <link href="/lonely/css/style.css" rel="stylesheet">
     <link href="/lonely/color/default.css" rel="stylesheet">
+    
 
 </head>
 

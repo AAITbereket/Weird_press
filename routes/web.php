@@ -43,11 +43,9 @@ Route::get('register_custom' , function(){
     return view('Register.register_custom');
 });
 
-
 //Route::post('login_request', 'userLoginController@doLogin');
 
-Route::post('login_request', 'userLoginController@registerMe');
-
+//Route::post('login_request', 'userLoginController@registerMe');
 
 Auth::routes();
 
