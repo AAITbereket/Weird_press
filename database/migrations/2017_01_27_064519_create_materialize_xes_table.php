@@ -17,6 +17,7 @@ class CreateMaterializeXesTable extends Migration
             $table->increments('id');
             $table->string('Logged_user_email');
             $table->string('Color_choice');
+            $table->string('Background_image');
             $table->string('User_Name_display');
             $table->mediumText('Name_subtitle');
             $table->longText('My_story');
@@ -24,12 +25,12 @@ class CreateMaterializeXesTable extends Migration
             $table->string('Age');
             $table->string('Phone');
             $table->string('email'); // I can use the email submitted when registering
+            $table->string('Address');
             $table->string('facebook');
             $table->string('twitter');
             $table->string('google+');
             $table->string('pinterest');
             $table->string('instagram');
-            $table->string('Address');
             $table->string('URL_to_access');
         });
     }
