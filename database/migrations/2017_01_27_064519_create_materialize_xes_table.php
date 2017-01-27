@@ -15,7 +15,7 @@ class CreateMaterializeXesTable extends Migration
     {
         Schema::create('materialize_xes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Logged_user');
+            $table->string('Logged_user_email');
             $table->string('Color_choice');
             $table->string('User_Name_display');
             $table->mediumText('Name_subtitle');
