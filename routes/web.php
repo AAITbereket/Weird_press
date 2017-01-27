@@ -29,6 +29,9 @@ Route::get('check' , function(){
 
 Route::get('temp', 'materializeXController@temp');
 
+Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
+
+
 Route::get('materializeX_check' , function(){
     return view('materializeXcheck');
 });
@@ -37,9 +40,9 @@ Route::get('lonely' , function(){
     return view('lonely.lonely');
 });
 
-Route::get('materializeX' , function(){
-    return view('materializeX.materializeX');
-});
+//Route::get('materializeX' , function(){
+//    return view('materializeX.materializeX');
+//});
 
 Route::get('register_custom' , function(){
     return view('Register.register_custom');

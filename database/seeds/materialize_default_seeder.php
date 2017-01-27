@@ -14,7 +14,7 @@ class materialize_default_seeder extends Seeder
         //
         DB::table('materialize_xes')->insert([
          'id' => null,
-        'Logged_user' => 'Some_one',
+        'Logged_user_email' => 'Some_one',
         'Color_choice' => 'color1',
         'User_Name_display' => 'Jhone Doe',
         'Name_subtitle' => 'UX/UI Designer from Dhaka, Bangladesh',
@@ -28,6 +28,7 @@ class materialize_default_seeder extends Seeder
         'google+' => '#',
         'pinterest' => '#',
         'instagram' => '#',
+        'Address' => "Dahaka, Bangladesh",
         'URL_to_access' => '#',
         ]);
     }

@@ -29,6 +29,7 @@ class CreateMaterializeXesTable extends Migration
             $table->string('google+');
             $table->string('pinterest');
             $table->string('instagram');
+            $table->string('Address');
             $table->string('URL_to_access');
         });
     }

@@ -1,3 +1,24 @@
+<?php
+
+        $Logged_user_email =$materializeX['Logged_user_email'] ;
+        $Color_choice = $materializeX['Color_choice'] . '.css';
+        $User_Name_display = $materializeX['User_Name_display'];
+        $Name_subtitle = $materializeX['Name_subtitle'];
+        $My_story = $materializeX['My_story'];
+        $Photo_image = $materializeX ['Photo_image'];
+        $Age = $materializeX ['Age'];
+        $Phone= $materializeX['Phone'];
+        $email = $materializeX['email'];
+        $facebook = $materializeX['facebook'];
+        $twitter = $materializeX['twitter'];
+        $google = $materializeX['google+'];
+        $pinterest = $materializeX['pinterest'];
+        $instagram = $materializeX['instagram'];
+        $Address = $materializeX['Address'];
+        $URL_to_access = $materializeX['URL_to_access'];
+
+?>
+
 
 
 <!DOCTYPE html>
@@ -35,7 +56,7 @@
   <link rel="stylesheet" href="/materializeX/css/responsive.css">
 
   <!-- Choose your default colors -->
-  <link rel="stylesheet" href="/materializeX/css/colors/color1.css">
+  <link rel="stylesheet" href="/materializeX/css/colors/{{$Color_choice}}">
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color2.css"> -->
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color3.css"> -->
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color4.css"> -->
@@ -71,8 +92,8 @@
             <div class="col-sm-12">
               <div class="home-inner">
                   <div class="center-align home-content">
-                    <h1 class="home-title">HI! I'm <span>John Doe</span></h1>
-                    <h2 class="home-subtitle">UX/UI Designer from Dhaka, Bangladesh</h2>
+                    <h1 class="home-title">HI! I'm <span>{{ $User_Name_display }} </span></h1>
+                    <h2 class="home-subtitle">{{$Name_subtitle}}</h2>
                     <a href="#contact" class="hire-me-btn btn waves-effect waves-light btn-large brand-bg white-text regular-text">Hire Me <i class="mdi-content-send left"></i>
                     </a>
                   </div>
@@ -104,8 +125,7 @@
             <div class="col-sm-12 col-md-4">
               <div class="person-about">
                 <h3 class="about-subtitle">My Story</h3>
-                <p>Hello, I’m a UI/UX Designer &amp; Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University. <br />
-                And scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                <p>{{$My_story}}</p>
                 <a class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Download Resume</a>
               </div>
             </div>
@@ -113,7 +133,7 @@
 
             <div class="col-sm-6 col-md-4">
               <div class="person-img wow fadeIn">
-                <img class="z-depth-1" src="/materializeX/images/person.png" alt="">
+                <img class="z-depth-1" src="{{$Photo_image}}" alt="">
               </div>
             </div>
             <!-- about me image -->
@@ -121,29 +141,29 @@
             <div class="col-sm-6 col-md-4">
               <div class="person-info">
                 <h3 class="about-subtitle">Personal Information</h3>
-                <h5><span>Name :</span> John Doe</h5>
-                <h5><span>Age :</span> 25 Years</h5>
-                <h5><span>Phone :</span> +0123456789</h5>
-                <h5><span>Email :</span> email@domain.com</h5>
-                <h5><span>Address :</span> Dhaka, Bangladesh</h5>
+                <h5><span>Name :</span> {{$User_Name_display}}</h5>
+                <h5><span>Age :</span> {{$Age}} Years</h5>
+                <h5><span>Phone :</span> {{$Phone}} </h5>
+                <h5><span>Email :</span> {{$email}} </h5>
+                <h5><span>Address :</span> {{$Address}}</h5>
               </div>
 
               <div class="about-social">
                 <ul>
                   <li>
-                    <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
+                    <a href="{{$facebook}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
                   </li>
                   <li>
-                    <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
+                    <a href="{{$twitter}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
                   </li>
                   <li>
-                    <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
+                    <a href="{{$google}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
                    </li>
                   <li>
-                    <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-linkedin"></i></a>
+                    <a href="{{$instagram}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-linkedin"></i></a>
                   </li>
                   <li>
-                    <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-pinterest"></i></a>
+                    <a href="{{$pinterest}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-pinterest"></i></a>
                   </li>
                 </ul>
               </div>
@@ -244,18 +264,15 @@
           <div class="col-sm-12">
             <div class="clearfix footer-inner">
               <ul class="left social-icons">
-                <li><a href="#" class="tooltips tooltipped facebook" data-position="top" data-delay="50" data-tooltip="Facebook"><i class="fa fa-facebook"></i></a>
+                <li><a href="{{$facebook}}" class="tooltips tooltipped facebook" data-position="top" data-delay="50" data-tooltip="Facebook"><i class="fa fa-facebook"></i></a>
                 </li>
-                <li><a href="#" class="tooltips tooltipped linkedin" data-position="top" data-delay="50" data-tooltip="Linkdin"><i class="fa fa-linkedin"></i></a>
+                <li><a href="{{$instagram}}" class="tooltips tooltipped linkedin" data-position="top" data-delay="50" data-tooltip="Linkdin"><i class="fa fa-linkedin"></i></a>
                 </li>
-                <li><a href="#" class="tooltips tooltipped twitter" data-position="top" data-delay="50" data-tooltip="Twitter"><i class="fa fa-twitter"></i></a>
+                <li><a href="{{$twitter}}" class="tooltips tooltipped twitter" data-position="top" data-delay="50" data-tooltip="Twitter"><i class="fa fa-twitter"></i></a>
                 </li>
-                <li><a href="#" class="tooltips tooltipped google-plus" data-position="top" data-delay="50" data-tooltip="Google Plus"><i class="fa fa-google-plus"></i></a>
+                <li><a href="{{$google}}" class="tooltips tooltipped google-plus" data-position="top" data-delay="50" data-tooltip="Google Plus"><i class="fa fa-google-plus"></i></a>
                 </li>
-                <li><a href="#" class="tooltips tooltipped dribbble" data-position="top" data-delay="50" data-tooltip="Dribbble"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li><a href="#" class="tooltips tooltipped behance" data-position="top" data-delay="50" data-tooltip="Behance"><i class="fa fa-behance"></i></a>
-                </li>
+
               </ul> <!-- ./social icons end -->
               <div class="right copyright">
                 <p>MaterialX &copy; All Rights Reserved</p>

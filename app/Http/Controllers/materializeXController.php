@@ -13,10 +13,15 @@ class materializeXController extends Controller
 
     public function temp()
     {
-        $materializeX = materializeX::all();
-        
+        $materializeX = materializeX::first();
+//        $materializeX_row = $materializeX;
         return view('temp', compact('materializeX'));
-
     }
 
+    public function materializeX_load_from_DB()
+    {
+        $materializeX = materializeX::first();
+        return view('materializeX.materializeX', compact('materializeX'));
+    }
+    
 }
