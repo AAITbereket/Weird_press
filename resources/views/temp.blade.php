@@ -7,9 +7,10 @@
 
     <h1> check mic</h1>
 
-     {{ $materializeX['User_Name_display'] }}
+     {{ $lonely_main_table }}
+{{--    {{$lonely  _main_table}}--}}
 
-    <?php  echo $materializeX['My_story']; ?>
+<!--   --><?php // echo $lonely_main_table; ?>
 
     </body>
 </html>

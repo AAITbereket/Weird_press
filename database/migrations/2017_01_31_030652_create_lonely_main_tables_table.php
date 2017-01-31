@@ -19,7 +19,7 @@ class CreateLonelyMainTablesTable extends Migration
             $table->string('Background_image');
             $table->string('User_Name_display');
             $table->mediumText('Name_subtitle');
-            $table->longText('Story_title');
+            $table->text('Story_title');
             $table->longText('My_story');
             $table->longText('Block_qoute');
             $table->text('Story_leftSide_image');

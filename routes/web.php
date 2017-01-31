@@ -36,9 +36,7 @@ Route::get('materializeX_check' , function(){
     return view('materializeXcheck');
 });
 
-Route::get('lonely' , function(){
-    return view('lonely.lonely');
-});
+Route::get('lonely' , 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX' , function(){
 //    return view('materializeX.materializeX');
