@@ -27,16 +27,17 @@ Route::get('check' , function(){
     return view('check');
 });
 
-Route::get('temp', 'materializeXController@temp');
+Route::get('temp', 'lonelyController@lonely_load_from_DB');
 
-Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
+//Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
 
+Route::get('materializeX_view', 'materializeXController@materializeX_load_from_DB');
 
 Route::get('materializeX_check' , function(){
     return view('materializeXcheck');
 });
 
-Route::get('lonely' , 'lonelyController@lonely_load_from_DB');
+Route::get('lonely_view' , 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX' , function(){
 //    return view('materializeX.materializeX');

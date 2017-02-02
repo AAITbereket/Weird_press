@@ -23,5 +23,11 @@ class materializeXController extends Controller
         $materializeX = materializeX::first();
         return view('materializeX.materializeX', compact('materializeX'));
     }
+
+//    public function X_()
+//    {
+//        $materializeX = materializeX::first();
+//        return view('materializeX.materializeX', compact('materializeX'));
+//    }
     
 }

@@ -28,7 +28,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lonely {{User_Name_display}}</title>
+    {{--<title>Lonely {{$User_Name_display}}</title>--}}
 
     <!-- CSS -->
     <link href="/lonely/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -115,9 +115,9 @@
 
                 <div class="section-heading text-center">
                     <div class="wow bounceInDown" data-wow-delay="0.2s">
-                        <h2>My name is {{User_Name_dispaly}}</h2>
+                        <h2>My name is {{ $User_Name_display }}</h2>
                     </div>
-                    <p class="wow bounceInUp" data-wow-delay="0.3s">{{Name_subtitle}}</p>
+                    <p class="wow bounceInUp" data-wow-delay="0.3s">{{$Name_subtitle}}</p>
                 </div>
 
             </div>
@@ -128,15 +128,15 @@
         <div class="row">
             <div class="col-md-6">
 
-                <img src="{{Story_leftSide_image}}" class="img-responsive img-rounded" alt="" />
+                <img src="{{$Story_leftSide_image}}" class="img-responsive img-rounded" alt="" />
             </div>
             <div class="col-md-6">
-                <p><strong>{{Story_title}}</strong></p>
+                <p><strong>{{$Story_title}}</strong></p>
                 <p>
-                    {{My_story}}
+                    {{$My_story}}
                 </p>
                 <blockquote>
-                    {{Block_qoute}}
+                    {{$Block_qoute}}
                 </blockquote>
                 <a href="#gallery" class="btn btn-skin btn-lg btn-scroll">See my photos</a>
             </div>
@@ -155,7 +155,7 @@
                     <div class="icon">
                         <i class="fa fa-graduation-cap fa-5x"></i>
                     </div>
-                    <span class="color-white">{{Hobby_one}}</span>
+                    <span class="color-white">{{$Hobby_one}}</span>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-3">
@@ -163,7 +163,7 @@
                     <div class="icon">
                         <i class="fa fa-heart fa-5x"></i>
                     </div>
-                    <span class="color-white">{{Hobby_two}}</span>
+                    <span class="color-white">{{$Hobby_two}}</span>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-3">
@@ -171,7 +171,7 @@
                     <div class="icon">
                         <i class="fa fa-plane fa-5x"></i>
                     </div>
-                    <span class="color-white">{{Hobby_three}}</span>
+                    <span class="color-white">{{$Hobby_three}}</span>
                 </div>
             </div>
             <div class="col-xs-6 col-sm-3 col-md-3">
@@ -179,7 +179,7 @@
                     <div class="icon">
                         <i class="fa fa-camera fa-5x"></i>
                     </div>
-                    <span class="color-white">{{Hobby_four}}</span>
+                    <span class="color-white">{{$Hobby_four}}</span>
                 </div>
             </div>
         </div>
@@ -291,7 +291,7 @@
 
                 </div>
                 <div class="text-center">
-                    <p class="lead"><i class="fa fa-phone"></i> Call me {{Phone}}</p>
+                    <p class="lead"><i class="fa fa-phone"></i> Call me {{$Phone}}</p>
                 </div>
             </div>
 
@@ -305,26 +305,26 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-12">
-                <p>&copy;Copyright 2014 . Alice Lonely . design by <a href="">Bootstraptaste</a></p>
+                <p>&copy;Copyright 2017. wierd press </p>
             </div>
         </div>
     </div>
 </footer>
 
 
-<script src="/Admin_panel_/js/bootstrap.min.js"></script>
-<!-- Core JavaScript Files -->
-<script src="/lonely/js/jquery.min.js"></script>
-<script src="/lonely/js/bootstrap.min.js"></script>
-<script src="/lonely/js/jquery.easing.min.js"></script>
-<script src="/lonely/js/jquery.sticky.js"></script>
-<script src="/lonely/js/jquery.scrollTo.js"></script>
-<script src="/lonely/js/stellar.js"></script>
-<script src="/lonely/js/wow.min.js"></script>
-<script src="/lonely/js/owl.carousel.min.js"></script>
-<script src="/lonely/js/nivo-lightbox.min.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="/lonely/js/custom.js"></script>
+    <script src="/Admin_panel_/js/bootstrap.min.js"></script>
+    <!-- Core JavaScript Files -->
+    <script src="/lonely/js/jquery.min.js"></script>
+    <script src="/lonely/js/bootstrap.min.js"></script>
+    <script src="/lonely/js/jquery.easing.min.js"></script>
+    <script src="/lonely/js/jquery.sticky.js"></script>
+    <script src="/lonely/js/jquery.scrollTo.js"></script>
+    <script src="/lonely/js/stellar.js"></script>
+    <script src="/lonely/js/wow.min.js"></script>
+    <script src="/lonely/js/owl.carousel.min.js"></script>
+    <script src="/lonely/js/nivo-lightbox.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/lonely/js/custom.js"></script>
 
 </body>
 
