@@ -9,7 +9,6 @@ use app\User;
 
 class materializeXController extends Controller
 {
-    //
 
     public function temp()
     {

@@ -12,7 +12,7 @@
             <meta name="description" content="">
             <meta name="author" content="">
 
-            <title>Lonely - Free bootstrap 3 one page template</title>
+            <title>Lonely - </title>
 
             <!-- CSS -->
             <link href="/lonely/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -319,6 +319,7 @@
 //                Main_div_height += $('footer').height();
                 alert(Main_div_height);
                 $("#leftCol").css('height',Main_div_height);
+                $("#leftCol").css('position','fixed');
             </script>
 
        </body>

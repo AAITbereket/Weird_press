@@ -29,6 +29,7 @@ class materialize_default_seeder extends Seeder
         'pinterest' => '#',
         'instagram' => '#',
         'Address' => "Dahaka, Bangladesh",
+        'Cv_document' => '#',    
         'URL_to_access' => '#',
         ]);
     }
