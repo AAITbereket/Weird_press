@@ -27,7 +27,13 @@ Route::get('check' , function(){
     return view('check');
 });
 
-Route::get('temp', 'lonelyController@lonely_load_from_DB');
+Route::get('X_edit' , function(){
+    return view('edit_materializeX.material_edit');
+});
+
+Route::post('temp', 'materializeXController@temp');
+
+//Route::get('temp', 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
 

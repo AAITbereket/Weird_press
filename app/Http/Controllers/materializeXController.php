@@ -10,11 +10,15 @@ use app\User;
 class materializeXController extends Controller
 {
 
-    public function temp()
+    public function temp(Request $request)
     {
-        $materializeX = materializeX::first();
+        //$materializeX = materializeX::first();
 //        $materializeX_row = $materializeX;
-        return view('temp', compact('materializeX'));
+
+        $rea = $request;
+
+        return view('temp', compact('$rea'));
+
     }
 
     public function materializeX_load_from_DB()
