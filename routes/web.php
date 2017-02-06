@@ -31,6 +31,9 @@ Route::get('lonely_edit' , function(){
     return view('edit_lonely.lonely_edit');
 });
 
+Route::get('template_choose' , function(){
+    return view('template_choose.choose');
+});
 
 Route::get('X_edit' , function(){
     return view('edit_materializeX.material_edit');
