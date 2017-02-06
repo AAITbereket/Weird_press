@@ -311,7 +311,6 @@
   <script src="/materializeX/js/owl.carousel.min.js"></script>
   {{--<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>--}}
   <script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
-  <script src="/materializeX/js/jwplayer.js"></script>
   <script src="/materializeX/js/sweet-alert.min.js"></script>
   <script src="/materializeX/js/common.js"></script>
   <script src="/materializeX/js/main.js"></script>

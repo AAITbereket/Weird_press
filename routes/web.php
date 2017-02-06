@@ -11,6 +11,15 @@
 |
 */
 
+
+// ####### Preview block
+
+Route::get('materialX_preivew' , 'materializeXController@show_preview' );
+
+Route::get('lonely_preivew' , 'lonelyController@show_preview' );
+// ####### end of preview block
+
+
 Route::get('/', function () {
     return view('welcome');
 });

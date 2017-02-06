@@ -67,7 +67,7 @@
                     </p>
 
                     <button class="btn btn-primary"> choose </button>
-                    <button class="btn btn-info"> preview </button>
+                    <a href="/materialX_preivew" target="_blank"> <button class="btn btn-info">  preview   </button> </a>
 
                 </div>
 
@@ -87,7 +87,7 @@
                     </p>
 
                     <button class="btn btn-primary"> choose </button>
-                    <button class="btn btn-info"> preview </button>
+                    <a href="/lonely_preivew" target="_blank"> <button class="btn btn-info">  preview   </button> </a>
 
                 </div>
 

@@ -196,7 +196,22 @@
 			$(document).ready(function() {
 
 				// Ajax for our form
-				$('form.ajax').on('submit', function(event){
+				$('form.ajax').submit(function(e){
+					e.preventDefault();
+					var registerForm = $("#material_edit");
+					var formData = registerForm.serialize();
+
+					$.ajax({
+						type     : "POST",
+						url      : '/X_edit',
+						data     : formData,
+//						cache    : false,
+						success  : function(data) {
+							console.log(data);
+						}
+					});
+				});
+				$('form.ajjax').on('submit', function(event){
 
 					event.preventDefault();
 
@@ -218,7 +233,7 @@
 						success  : function(data) {
 							console.log(data);
 						}
-					})
+					});
 
 					 console.log(formData);
 
@@ -226,7 +241,7 @@
 
 					 alert('form is submited');
 
-					return false;
+//					return false;
 				});
 			});
 		</script>

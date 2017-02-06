@@ -22,4 +22,9 @@ class lonelyController extends Controller
 
             return view('lonely.lonely', compact('lonely_main_table'));
     }
+
+    public function show_preview()
+    {
+        return view('previews.lonely_preview');
+    }
 }
