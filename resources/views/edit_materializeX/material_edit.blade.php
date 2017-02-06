@@ -79,21 +79,26 @@
 
 			<h5>Materialize Edit</h5>
 
+     {!! Form::open( array( 'class' => 'ajax', 'files' => true, 'id' => 'material_edit')) !!}
+
 			<hr>
 
 			<div class="row">
 
+				{{--{!! Form::hidden('email', '{Auth::user->email}'  ,['value' =>'{Auth::user->email}' ]) !!}--}}
 
 				<div class="input-field col s4">
-					<input id="first_name" type="text" class="validate" required>
+					{{--<input id="first_name" type="text" class="validate" required>--}}
+					{!! Form::text('first_name','',['class' => 'validate'], ['id'=>'first_name']) !!}
 					<label for="first_name"> HI I am </label>
 				</div>
 
 				<div class="input-field col s2"></div>
 
 				<div class="input-field col s4">
-					<input id="first_name" type="text" class="validate" required>
-					<label for="first_name"> Name subtitle </label>
+					{{--<input id="first_name" type="text" class="validate" required>--}}
+					{!! Form::text('name_subtitle','',['class' => 'validate'], ['id'=>'name_subtitle']) !!}
+					<label for="name_subtitle"> Name subtitle </label>
 				</div>
 
 				<br> <br>
@@ -104,7 +109,8 @@
 				<div class="col s5">
 
 					<div class="input-field">
-						<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+						{{--<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>--}}
+						{!! Form::textarea('textarea1','',['class' => 'materialize-textarea'], ['id'=>'textarea1'],['length'=>'120']) !!}
 						<label for="textarea1">My Story</label>
 					</div>
 
@@ -113,6 +119,7 @@
 					<div>
 
 						<img src="/edit_materialx/img/person.png">
+						{!! Form::file('image')!!}
 
 					</div>
 
@@ -126,27 +133,37 @@
 					<h5> Personal Info. </h5>
 
 					<label for="Name"> Name </label>
-					<input id="Name" type="text" class="validate" required>
+					{{--<input id="Name" type="text" class="validate" required>--}}
+					{!! Form::text('Name','',['class' => 'validate'], ['id'=>'Name']) !!}
 
 					<label for="Age"> Age </label>
-					<input id="Age" type="text" class="validate" required>
+					{{--<input id="Age" type="text" class="validate" required>--}}
+					{!! Form::text('Age','',['class' => 'validate'], ['id'=>'Age']) !!}
 
 					<label for="Phone_No"> Phone No </label>
-					<input id="Phone_No" type="text" class="validate" required>
+					{{--<input id="Phone_No" type="text" class="validate" required>--}}
+					{!! Form::text('Phone_No','',['class' => 'validate'], ['id'=>'Phone_No']) !!}
 
-					<label for="email"> email </label>
-					<input id="email" type="text" class="validate" required>
+					{{--<label for="email"> email </label>--}}
+					{{--<input id="email" type="text" class="validate" required>--}}
+					{{--{!! Form::text('email','',['class' => 'validate'], ['id'=>'email']) !!}--}}
 
 					<label for="Address"> Address </label>
-					<input id="Address" type="text" class="validate" required>
+					{{--<input id="Address" type="text" class="validate" required>--}}
+					{!! Form::text('Address','',['class' => 'validate'], ['id'=>'Address']) !!}
 
 
-				</div>
+					</div>
 
+					</div>
+
+				{!! Form::submit('Submit') !!}
+
+				{!! Form::close() !!}
 
 			</div>
 
-		</div>
+
 
 		</main>
 		<!-- Main Container end-->
@@ -156,12 +173,10 @@
 		<script src="/materializeX/js/jquery.min.js"></script>
 		<script src="/materializeX/js/jquery.easing.1.3.js"></script>
 		<script src="/materializeX/js/detectmobilebrowser.js"></script>
-		<script src="/materializeX/js/isotope.pkgd.min.js"></script>
 
 		<script src="/materializeX/js/owl.carousel.min.js"></script>
 		{{--<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>--}}
 		<script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
-		<script src="/materializeX/js/jwplayer.js"></script>
 		<script src="/materializeX/js/sweet-alert.min.js"></script>
 		<script src="/materializeX/js/common.js"></script>
 		<script src="/materializeX/js/main.js"></script>
@@ -174,6 +189,46 @@
 			//                Main_div_height += $('footer').height();
 			$("#leftCol").css('height',Main_div_height);
 			$("#leftCol").css('position','fixed');
+		</script>
+
+		<script>
+			// $("table").stupidtable();
+			$(document).ready(function() {
+
+				// Ajax for our form
+				$('form.ajax').on('submit', function(event){
+
+					event.preventDefault();
+
+//					var formData = {
+//						name     : $('text[first_name]').val(),
+//						email    : $('text[name_subtitle]').val(),
+////						homepage : $('text[name=homepage]').val(),
+//						message  : $('textarea[textarea1]').val()
+//					}
+
+					var registerForm = $("#material_edit");
+					var formData = registerForm.serialize();
+
+					$.ajax({
+						type     : "POST",
+						 url      : '/X_edit',
+						data     : formData,
+						cache    : false,
+						success  : function(data) {
+							console.log(data);
+						}
+					})
+
+					 console.log(formData);
+
+					// alert($(this).attr('action'));
+
+					 alert('form is submited');
+
+					return false;
+				});
+			});
 		</script>
 
 	</div>

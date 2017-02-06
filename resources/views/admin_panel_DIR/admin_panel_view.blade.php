@@ -71,6 +71,7 @@
                 <div class="profile_info">
                   <span>Welcome,</span>
                   <h2>{{ Auth::user()->name }}</h2>
+                  {{--<h2>{{ Auth::user()->email }}</h2>--}}
                 </div>
               </div>
               <!-- /menu profile quick info -->
@@ -92,7 +93,6 @@
                         <li><a href="#">Edit Name </a></li>
                         <li><a href="#">Edit My story </a></li>
                         <li><a href="#">Edit Personal Info.</a></li>
-                        <li><a href="#">Edit Social media links </a></li>
                         <li><a href="#">Edit Images </a></li>
                       </ul>
                     </li>

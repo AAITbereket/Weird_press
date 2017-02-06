@@ -291,16 +291,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <p>&copy;Copyright 2014 . Alice Lonely . design by <a href="">Bootstraptaste</a></p>
+                        <p>&copy;Copyright 2017 . Alice Lonely . design by weird press</p>
                     </div>
                 </div>
             </div>
         </footer>
 
-
+        <script src="/lonely/js/jquery.min.js"></script>
         <script src="/Admin_panel_/js/bootstrap.min.js"></script>
         <!-- Core JavaScript Files -->
-        <script src="/lonely/js/jquery.min.js"></script>
         <script src="/lonely/js/bootstrap.min.js"></script>
         <script src="/lonely/js/jquery.easing.min.js"></script>
         <script src="/lonely/js/jquery.sticky.js"></script>

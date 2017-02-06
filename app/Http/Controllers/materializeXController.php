@@ -10,14 +10,40 @@ use app\User;
 class materializeXController extends Controller
 {
 
-    public function temp(Request $request)
+    public function temp()
     {
         //$materializeX = materializeX::first();
 //        $materializeX_row = $materializeX;
 
-        $rea = $request;
+        return view('temp');
 
-        return view('temp', compact('$rea'));
+    }
+
+    public function temp_post(Request $request)
+    {
+
+//        $data['sucess'] = true;
+//        $data['message'] = 'Your AJAX processed correctly';
+
+        $this->layout = null;
+        //check if its our form
+        if(Request::ajax()){
+            $name = Input::get( 'first_name' );
+            $content = Input::get( 'name_subtitle' );
+
+            $response = array(
+                'status' => 'success',
+                'msg' => 'Setting created successfully',
+            );
+            return 'yea';
+        }else{
+            return 'no';
+        }
+
+//        return $request->input();
+
+        return response()->json($data);
+//        return redirect('/')->with('success_message', 'Record successfully added!');
 
     }
 

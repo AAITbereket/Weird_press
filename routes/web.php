@@ -27,12 +27,18 @@ Route::get('check' , function(){
     return view('check');
 });
 
+Route::get('lonely_edit' , function(){
+    return view('edit_lonely.lonely_edit');
+});
+
+
 Route::get('X_edit' , function(){
     return view('edit_materializeX.material_edit');
 });
 
-Route::post('temp', 'materializeXController@temp');
+Route::get('temp', 'materializeXController@temp');
 
+Route::post('X_edit', 'materializeXController@temp_post');
 //Route::get('temp', 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
