@@ -3,6 +3,7 @@
 
 @section('content')
 
+
 	<div class="" style="max-width: 990px;" id="main_display" xmlns:Auth="http://www.w3.org/1999/xhtml">
 
 
@@ -211,8 +212,20 @@
 					</div>
 
 				</div>
+			<br/><hr/>
+			<div class="row">
 
+				<div class="col s3">
+					<br/><br/>
+					<h3> localhost:8000/mypages/</h3>
+				</div>
 
+				<div class=" col s5">
+					<label for="URL_to_access"> URL to access to your page </label>
+					<input id="URL_to_access" name="URL_to_access" type="text" data-error="wrong" data-success="right" class="validate" >
+				</div>
+
+			</div>
 
 {{--				{!! Form::submit('Submit') !!}--}}
 				<button type="submit" class="btn waves-effect waves-light">  Submit </button>
@@ -251,11 +264,6 @@
 			$("#leftCol").css('position','fixed');
 		</script>
 
-		<script>
-			$(document).ready(function() {
-				$('select').material_select();
-			});
-		</script>
 
 		<script>
 			// $("table").stupidtable();
@@ -280,6 +288,13 @@
 
 			});
 		</script>
+
+		<script>
+			$(document).ready(function() {
+				$('select').material_select();
+			});
+		</script>
+
 
 	</div>
 

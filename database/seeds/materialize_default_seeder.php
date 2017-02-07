@@ -14,7 +14,7 @@ class materialize_default_seeder extends Seeder
         //
         DB::table('materialize_xes')->insert([
          'id' => null,
-        'Logged_user_email' => 'Some_one',
+        'Logged_user_email' => 'hello@hell.com',
         'Color_choice' => 'color1',
         'Background_image' => '/materializeX/images/home-bg.jpg',
         'User_Name_display' => 'Jhone Doe',
@@ -26,7 +26,7 @@ class materialize_default_seeder extends Seeder
         'email' => 'email@domain.com', // I can use the email submitted when registering
         'facebook' => '#',
         'twitter' => '#',
-        'google+' => '#',
+        'google' => '#',
         'pinterest' => '#',
         'instagram' => '#',
         'Address' => "Dahaka, Bangladesh",

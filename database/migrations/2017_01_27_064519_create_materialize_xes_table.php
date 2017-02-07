@@ -28,7 +28,7 @@ class CreateMaterializeXesTable extends Migration
             $table->string('Address');
             $table->string('facebook');
             $table->string('twitter');
-            $table->string('google+');
+            $table->string('google');
             $table->string('pinterest');
             $table->string('instagram');
             $table->string('Cv_document');
