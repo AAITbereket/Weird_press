@@ -46,10 +46,9 @@
         .intro {
             width: 100%;
             position: relative;
-            background: url('/lonely/img/bg1.jpg') no-repeat top center;
+            background: url('{{$Background_image}}') no-repeat top center;
             background-size: cover;
         }
-
     </style>
 
 

@@ -1,4 +1,4 @@
-@extends('admin_panel_DIR.admin_panel_view')
+@extends('../admin_panel_DIR.admin_panel_view')
 
 
 @section('content')

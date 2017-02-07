@@ -11,13 +11,18 @@
 |
 */
 
-
 // ####### Preview block
-
 Route::get('materialX_preivew' , 'materializeXController@show_preview' );
 
 Route::get('lonely_preivew' , 'lonelyController@show_preview' );
 // ####### end of preview block
+
+// ###### URL Access My page / my email
+Route::get('MyPage/{email}' , 'HomeController@accessMyPage' );
+// ###### endo of access mypage / myemail
+
+// ##### after login or registration
+Route::get('admin_panel', 'HomeController@showAdminPanel');
 
 
 Route::get('/', function () {
@@ -28,12 +33,9 @@ Route::get('login_', function(){
     return view('Login/login_temp');
 });
 
-Route::get('admin_panel', function(){
-    return view('admin_panel_DIR/admin_panel_view');
-});
 
 Route::get('check' , function(){
-    return view('check');
+    return view('admin_panel_template_view.check');
 });
 
 Route::get('lonely_edit' , function(){
@@ -58,7 +60,7 @@ Route::post('X_edit', 'materializeXController@temp_post');
 Route::get('materializeX_view', 'materializeXController@materializeX_load_from_DB');
 
 Route::get('materializeX_check' , function(){
-    return view('materializeXcheck');
+    return view('admin_panel_template_view.materializeXcheck');
 });
 
 Route::get('lonely_view' , 'lonelyController@lonely_load_from_DB');
