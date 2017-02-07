@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\materializeX;
 
 use app\User;
+use Illuminate\Support\Facades\Auth;
 
 class materializeXController extends Controller
 {
@@ -91,5 +92,33 @@ class materializeXController extends Controller
     {
         return view('previews.material_preview');
     }
-    
+
+    public function templateChosed()
+    {
+
+        $New_row = new materializeX;
+        $New_row->Logged_user_email = Auth::user()->email;
+        $New_row->Color_choice = 'color1';
+        $New_row->Background_image = '/materializeX/images/home-bg.jpg';
+        $New_row->User_Name_display = 'Jhone Doe';
+        $New_row->Name_subtitle = 'UX/UI Designer from Dhaka, Bangladesh';
+        $New_row->My_story = 'Hello, I’m a UI/UX Designer & Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University. And scrambled it to make a type specimen book. It has survived not only five centuries';
+        $New_row->Photo_image = '/materializeX/images/person.png';
+        $New_row->Age = '25';
+        $New_row->Phone = '+0123456789';
+        $New_row->email  = 'email@domain.com'; // I can use the email submitted when registering
+        $New_row->facebook  = '#';
+        $New_row->twitter  = '#';
+        $New_row->google  = '#';
+        $New_row->pinterest = '#';
+        $New_row->instagram = '#';
+        $New_row->Address = "Dahaka; Bangladesh";
+        $New_row->Cv_document = '#';
+        $New_row->URL_to_access = '#';
+        $New_row->save();
+
+        return redirect('admin_panel');
+
+    }
+
 }

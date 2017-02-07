@@ -5,7 +5,27 @@
 
     <div class="" style="max-width: 990px;" id="main_display">
 
+        <?php
 
+        $Logged_user_email =$materializeX['Logged_user_email'] ;
+        $Color_choice = $materializeX['Color_choice'] . '.css';
+        $Background_image = $materializeX['Background_image'];
+        $User_Name_display = $materializeX['User_Name_display'];
+        $Name_subtitle = $materializeX['Name_subtitle'];
+        $My_story = $materializeX['My_story'];
+        $Photo_image = $materializeX ['Photo_image'];
+        $Age = $materializeX ['Age'];
+        $Phone= $materializeX['Phone'];
+        $email = $materializeX['email'];
+        $facebook = $materializeX['facebook'];
+        $twitter = $materializeX['twitter'];
+        $google = $materializeX['google+'];
+        $pinterest = $materializeX['pinterest'];
+        $instagram = $materializeX['instagram'];
+        $Address = $materializeX['Address'];
+        $URL_to_access = $materializeX['URL_to_access'];
+
+        ?>
 
         <head>
             <meta charset="utf-8">
@@ -58,6 +78,12 @@
 
             </style>
 
+            <style>
+                #home {
+                    background: url("{{$Background_image}}") no-repeat fixed center center / cover;
+                }
+            </style>
+
         </head>
 
         <body>
@@ -82,8 +108,8 @@
                             <div class="col-sm-12">
                                 <div class="home-inner">
                                     <div class="center-align home-content">
-                                        <h1 class="home-title">HI! I'm <span>John Doe</span></h1>
-                                        <h2 class="home-subtitle">UX/UI Designer from Dhaka, Bangladesh</h2>
+                                        <h1 class="home-title">HI! I'm <span>{{ $User_Name_display }} </span></h1>
+                                        <h2 class="home-subtitle">{{$Name_subtitle}}</h2>
                                         <a href="#contact" class="hire-me-btn btn waves-effect waves-light btn-large brand-bg white-text regular-text">Hire Me <i class="mdi-content-send left"></i>
                                         </a>
                                     </div>
@@ -115,8 +141,7 @@
                             <div class="col-sm-12 col-md-4">
                                 <div class="person-about">
                                     <h3 class="about-subtitle">My Story</h3>
-                                    <p>Hello, I’m a UI/UX Designer &amp; Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University. <br />
-                                        And scrambled it to make a type specimen book. It has survived not only five centuries</p>
+                                    <p>{{$My_story}}</p>
                                     <a class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Download Resume</a>
                                 </div>
                             </div>
@@ -124,7 +149,7 @@
 
                             <div class="col-sm-6 col-md-4">
                                 <div class="person-img wow fadeIn">
-                                    <img class="z-depth-1" src="/materializeX/images/person.png" alt="">
+                                    <img class="z-depth-1" src="{{$Photo_image}}" alt="">
                                 </div>
                             </div>
                             <!-- about me image -->
@@ -132,29 +157,29 @@
                             <div class="col-sm-6 col-md-4">
                                 <div class="person-info">
                                     <h3 class="about-subtitle">Personal Information</h3>
-                                    <h5><span>Name :</span> John Doe</h5>
-                                    <h5><span>Age :</span> 25 Years</h5>
-                                    <h5><span>Phone :</span> +0123456789</h5>
-                                    <h5><span>Email :</span> email@domain.com</h5>
-                                    <h5><span>Address :</span> Dhaka, Bangladesh</h5>
+                                    <h5><span>Name :</span> {{$User_Name_display}}</h5>
+                                    <h5><span>Age :</span> {{$Age}} Years</h5>
+                                    <h5><span>Phone :</span> {{$Phone}} </h5>
+                                    <h5><span>Email :</span> {{$email}} </h5>
+                                    <h5><span>Address :</span> {{$Address}}</h5>
                                 </div>
 
                                 <div class="about-social">
                                     <ul>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
+                                            <a href="{{$facebook}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
+                                            <a href="{{$twitter}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
+                                            <a href="{{$google}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-linkedin"></i></a>
+                                            <a href="{{$instagram}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-linkedin"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-pinterest"></i></a>
+                                            <a href="{{$pinterest}}" class="btn-floating waves-effect waves-light white"><i class="fa fa-pinterest"></i></a>
                                         </li>
                                     </ul>
                                 </div>

@@ -24,6 +24,12 @@ Route::get('MyPage/{email}' , 'HomeController@accessMyPage' );
 // ##### after login or registration
 Route::get('admin_panel', 'HomeController@showAdminPanel');
 
+// ##### when a materialize template is chosen
+Route::get('material_chosed' , 'materializeXController@templateChosed' );
+
+// ##### when a lonely template is chosen
+Route::get('lonely_chosed' , 'lonelyController@templateChosed' );
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,7 +41,7 @@ Route::get('login_', function(){
 
 
 Route::get('check' , function(){
-    return view('admin_panel_template_view.check');
+    return view('admin_panel_template_view.lonely_admin');
 });
 
 Route::get('lonely_edit' , function(){
@@ -60,7 +66,7 @@ Route::post('X_edit', 'materializeXController@temp_post');
 Route::get('materializeX_view', 'materializeXController@materializeX_load_from_DB');
 
 Route::get('materializeX_check' , function(){
-    return view('admin_panel_template_view.materializeXcheck');
+    return view('admin_panel_template_view.materialize_admin');
 });
 
 Route::get('lonely_view' , 'lonelyController@lonely_load_from_DB');

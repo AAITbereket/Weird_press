@@ -52,9 +52,10 @@ class HomeController extends Controller
 
     public function showAdminPanel()
     {
+
         if (! Auth::check())
         {
-            redirect("/login");
+            return redirect('login');
         }
 
         else{
@@ -66,16 +67,17 @@ class HomeController extends Controller
             if($table_material->count())
             {
                 $materializeX = $table_material[0];
-                return view('materializeX.materializeX', compact('materializeX'));
+                return view('admin_panel_template_view.materialize_admin', compact('materializeX'));
             }
             elseif ($table_lonely->count())
             {
                 $lonely_main_table = $table_lonely[0];
-                return view('lonely.lonely', compact('lonely_main_table'));
+                return view('admin_panel_template_view.lonely_admin', compact('lonely_main_table'));
             }
+
             else
             {
-                redirect('template_choose');
+                return redirect('template_choose');
             }
 
         }

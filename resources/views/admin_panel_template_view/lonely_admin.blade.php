@@ -6,6 +6,25 @@
     <div class="" style="max-width: 990px;" id="main_display">
 
 
+        <?php
+
+        $Logged_user_email =$lonely_main_table['Logged_user_email'] ;
+        $Background_image = $lonely_main_table['Background_image'];
+        $User_Name_display = $lonely_main_table['User_Name_display'];
+        $Name_subtitle = $lonely_main_table['Name_subtitle'];
+        $Story_title = $lonely_main_table['Story_title'];
+        $My_story = $lonely_main_table['My_story'];
+        $Block_qoute = $lonely_main_table['Block_qoute'];
+        $Story_leftSide_image = $lonely_main_table['Story_leftSide_image'];
+        $Hobby_one = $lonely_main_table['Hobby_one'];
+        $Hobby_two = $lonely_main_table['Hobby_two'];
+        $Hobby_three = $lonely_main_table['Hobby_three'];
+        $Hobby_four = $lonely_main_table['Hobby_four'];
+        $Phone = $lonely_main_table['Phone'];
+        $URL_to_access = $lonely_main_table['URL_to_access'];
+
+        ?>
+
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,6 +53,16 @@
                     width:990px;
                  }
 
+            </style>
+
+            <style>
+
+                .intro {
+                    width: 100%;
+                    position: relative;
+                    background: url('{{$Background_image}}') no-repeat top center;
+                    background-size: cover;
+                }
             </style>
         </head>
 
@@ -98,9 +127,9 @@
 
                         <div class="section-heading text-center">
                             <div class="wow bounceInDown" data-wow-delay="0.2s">
-                                <h2>My name is Alice</h2>
+                                <h2>My name is {{ $User_Name_display }}</h2>
                             </div>
-                            <p class="wow bounceInUp" data-wow-delay="0.3s">I'm 28 years old from a village near Alpen mountain and I'm a spinster :(</p>
+                            <p class="wow bounceInUp" data-wow-delay="0.3s">{{$Name_subtitle}}</p>
                         </div>
 
                     </div>
@@ -111,18 +140,15 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        <img src="/lonely/img/img1.jpg" class="img-responsive img-rounded" alt="" />
+                        <img src="{{$Story_leftSide_image}}" class="img-responsive img-rounded" alt="" />
                     </div>
                     <div class="col-md-6">
-                        <p><strong>You'll fall in love with me at the first sight</strong></p>
+                        <p><strong>{{$Story_title}}</strong></p>
                         <p>
-                            Lorem ipsum dolor sit amet, ei purto tamquam ceteros his, eos in graece posidonium.
-                            Ex nullam vidisse salutatus sed, ea persius phaedrum tincidunt vel. Option virtute nonumes ne est.
-                            Id homero expetendis eam, dictas rationibus ut has.
+                            {{$My_story}}
                         </p>
                         <blockquote>
-                            Pri pertinacia elaboraret te, an eirmod delicatissimi nec. Eu liber quodsi maiorum mei.
-                            Civibus perfecto rationibus id his, est noster nostrud aliquando at.
+                            {{$Block_qoute}}
                         </blockquote>
                         <a href="#gallery" class="btn btn-skin btn-lg btn-scroll">See my photos</a>
                     </div>
@@ -141,7 +167,7 @@
                             <div class="icon">
                                 <i class="fa fa-graduation-cap fa-5x"></i>
                             </div>
-                            <span class="color-white">Bachelor of Design</span>
+                            <span class="color-white">{{$Hobby_one}}</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -149,7 +175,7 @@
                             <div class="icon">
                                 <i class="fa fa-heart fa-5x"></i>
                             </div>
-                            <span class="color-white">10x failed in love</span>
+                            <span class="color-white">{{$Hobby_two}}</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -157,7 +183,7 @@
                             <div class="icon">
                                 <i class="fa fa-plane fa-5x"></i>
                             </div>
-                            <span class="color-white">I love traveling</span>
+                            <span class="color-white">{{$Hobby_three}}</span>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3">
@@ -165,7 +191,7 @@
                             <div class="icon">
                                 <i class="fa fa-camera fa-5x"></i>
                             </div>
-                            <span class="color-white">I'm photographer</span>
+                            <span class="color-white">{{$Hobby_four}}</span>
                         </div>
                     </div>
                 </div>
@@ -277,7 +303,7 @@
 
                         </div>
                         <div class="text-center">
-                            <p class="lead"><i class="fa fa-phone"></i> Call me +1 888 9796 88</p>
+                            <p class="lead"><i class="fa fa-phone"></i> Call me {{$Phone}}</p>
                         </div>
                     </div>
 
@@ -291,7 +317,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-lg-12">
-                        <p>&copy;Copyright 2017 . Alice Lonely . design by weird press</p>
+                        <p>&copy;Copyright 2017 . Alice Lonely. design by weird press</p>
                     </div>
                 </div>
             </div>

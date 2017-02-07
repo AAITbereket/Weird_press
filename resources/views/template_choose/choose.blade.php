@@ -66,7 +66,7 @@
                         MaterialX is a material design Resume and Portfolio Template based on Twitter Bootstrap and Materialize, developed for professional to display their Profile, Resume etc. Easily customizable and fully responsive for all device.
                     </p>
 
-                    <button class="btn btn-primary"> choose </button>
+                    <a href="/material_chosed"> <button class="btn btn-primary"> choose </button> </a>
                     <a href="/materialX_preivew" target="_blank"> <button class="btn btn-info">  preview   </button> </a>
 
                 </div>
@@ -86,7 +86,7 @@
                         Lonely’, it’s a single page template with scrolling and animation. Lonely template designed for showcasing short biography or something like simple personal site.
                     </p>
 
-                    <button class="btn btn-primary"> choose </button>
+                    <a href="/lonely_chosed"> <button class="btn btn-primary"> choose </button> </a>
                     <a href="/lonely_preivew" target="_blank"> <button class="btn btn-info">  preview   </button> </a>
 
                 </div>
