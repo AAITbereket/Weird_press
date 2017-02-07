@@ -123,9 +123,10 @@
 
 					<div>
 
-						<img src="/edit_materialx/img/person.png">
+						<img src="/edit_materialx/img/person.png" style="max-height: 168px;">
 						{{--{!! Form::file('image')!!}--}}
-						<input type="file" name="image"/>
+						<br/><br/>
+						<input class="waves-effect waves-teal btn-flat" type="file" name="image"/>
 
 					</div>
 
@@ -134,7 +135,7 @@
 
 
 
-				<div class="col s6 offset-s1">
+				<div class="col s5 offset-s1">
 
 					<h5> Personal Info. </h5>
 
@@ -164,8 +165,57 @@
 
 					</div>
 
+				<br/><hr/>
+
+			<h2> Upload your CV  </h2>
+
+				<div class="row">
+
+					<br/>
+					<div class="input-field col s5">
+						<input class="waves-effect waves-teal btn-flat" type="file" name="image"/>
+					</div>
+
+					<div class="input-field col s6">
+						<select>
+							<option value="" disabled selected>Choose your option</option>
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3">Option 3</option>
+						</select>
+						<label>Materialize Select</label>
+					</div>
+
+				</div>
+
+				<br/><hr/>
+				<h2> Edit Social media links  </h2>
+			<br/>
+			    <div class="row">
+
+					<div class="col-md-3">
+						<label for="facebook"> Facebook </label>
+						<input id="facebook" name="facebook" type="text" class="validate" >
+					</div>
+					<div class="col-md-3">
+						<label for="twitter"> Twitter </label>
+						<input id="twitter" name="Twitter" type="text" class="validate" >
+					</div>
+					<div class="col-md-3">
+						<label for="google+"> google+ </label>
+						<input id="google+" name="google" type="text" class="validate" >
+					</div>
+					<div class="col-md-3">
+						<label for="Linkdein"> Linkdein </label>
+						<input id="Linkdein" name="Linkdein" type="text" class="validate" >
+					</div>
+
+				</div>
+
+
+
 {{--				{!! Form::submit('Submit') !!}--}}
-				<input type="submit" value="Submit"/>
+				<button type="submit" class="btn waves-effect waves-light">  Submit </button>
 
 {{--				{!! Form::close() !!}--}}
 
@@ -199,6 +249,12 @@
 			//                Main_div_height += $('footer').height();
 			$("#leftCol").css('height',Main_div_height);
 			$("#leftCol").css('position','fixed');
+		</script>
+
+		<script>
+			$(document).ready(function() {
+				$('select').material_select();
+			});
 		</script>
 
 		<script>

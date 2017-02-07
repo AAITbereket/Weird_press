@@ -38,9 +38,9 @@
             </div>
             <br/>
             <div class="signin">
-                <div class="panel-heading"> <h3> Register </h3></div>
+                <div class="panel-heading"> <h3 style="color:white;"> Register </h3></div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" style="color:white;" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

@@ -2,7 +2,7 @@
 
         $Logged_user_email =$materializeX['Logged_user_email'] ;
         $Color_choice = $materializeX['Color_choice'] . '.css';
-//        $Background_image = $materializeX['Background_image'];
+        $Background_image = $materializeX['Background_image'];
         $User_Name_display = $materializeX['User_Name_display'];
         $Name_subtitle = $materializeX['Name_subtitle'];
         $My_story = $materializeX['My_story'];
@@ -71,10 +71,9 @@
   <![endif]-->
       <style>
           #home {
-          background: url('/materializeX/images/home-bg.jpg') no-repeat fixed center center / cover;
+          background: url("{{$Background_image}}") no-repeat fixed center center / cover;
           }
       </style>
-
 
 </head>
 

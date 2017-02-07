@@ -16,6 +16,7 @@ class materialize_default_seeder extends Seeder
          'id' => null,
         'Logged_user_email' => 'Some_one',
         'Color_choice' => 'color1',
+        'Background_image' => '/materializeX/images/home-bg.jpg',
         'User_Name_display' => 'Jhone Doe',
         'Name_subtitle' => 'UX/UI Designer from Dhaka, Bangladesh',
         'My_story' => 'Hello, I’m a UI/UX Designer & Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University. And scrambled it to make a type specimen book. It has survived not only five centuries',
