@@ -22,29 +22,25 @@ class materializeXController extends Controller
     public function temp_post(Request $request)
     {
 
-        return response()->json($request->all());
-//        $data['sucess'] = true;
-//        $data['message'] = 'Your AJAX processed correctly';
+        $name_display = $request->input('Name');
+        $subtitle = $request->subtitle;
+        $my_story = '';
+        $Name = '';
+        $Age = '';
+        $Phone_No = '';
+        $Address = '';
 
-//        $this->layout = null;
-//        //check if its our form
-//        if(Request::ajax()){
-//            $name = Input::get( 'first_name' );
-//            $content = Input::get( 'name_subtitle' );
-//
-//            $response = array(
-//                'status' => 'success',
-//                'msg' => 'Setting created successfully',
-//            );
-//            return 'yea';
-//        }else{
-//            return 'no';
-//        }
+        $email = 'hello@hell.com';
 
-//        return $request->input();
+        $table = materializeX::where('Logged_user_email', $email )->get();
 
-//        return response()->json($data);
-//        return redirect('/')->with('success_message', 'Record successfully added!');
+        if(isset($table->Logged_user_email) )
+        {
+            return response()->json($table);
+        }
+
+
+        return response()->json(request()->all());
 
     }
 

@@ -3,7 +3,7 @@
 
 @section('content')
 
-	<div class="" style="max-width: 990px;" id="main_display">
+	<div class="" style="max-width: 990px;" id="main_display" xmlns:Auth="http://www.w3.org/1999/xhtml">
 
 
 
@@ -79,7 +79,11 @@
 
 			<h5>Materialize Edit</h5>
 
-     {!! Form::open( array( 'class' => 'ajax', 'files' => true, 'id' => 'material_edit')) !!}
+     {{--{!! Form::open( array( 'class' => 'ajax', 'files' => true, 'id' => 'material_edit')) !!}--}}
+
+		<form method="POST" class="ajax" enctype="multipart/form-data" id = 'material_edit'>
+
+			<input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
 			<hr>
 
@@ -88,16 +92,17 @@
 				{{--{!! Form::hidden('email', '{Auth::user->email}'  ,['value' =>'{Auth::user->email}' ]) !!}--}}
 
 				<div class="input-field col s4">
-					{{--<input id="first_name" type="text" class="validate" required>--}}
-					{!! Form::text('first_name','',['class' => 'validate'], ['id'=>'first_name']) !!}
+					<input id="first_name" name="Name_display" type="text" class="validate">
+{{--					{!! Form::text('first_name','',['class' => 'validate'], ['id'=>'first_name']) !!}--}}
+
 					<label for="first_name"> HI I am </label>
 				</div>
 
 				<div class="input-field col s2"></div>
 
 				<div class="input-field col s4">
-					{{--<input id="first_name" type="text" class="validate" required>--}}
-					{!! Form::text('name_subtitle','',['class' => 'validate'], ['id'=>'name_subtitle']) !!}
+					<input id="first_name" name="subtitle" type="text" class="validate">
+{{--					{!! Form::text('name_subtitle','',['class' => 'validate'], ['id'=>'name_subtitle']) !!}--}}
 					<label for="name_subtitle"> Name subtitle </label>
 				</div>
 
@@ -109,8 +114,8 @@
 				<div class="col s5">
 
 					<div class="input-field">
-						{{--<textarea id="textarea1" class="materialize-textarea" length="120"></textarea>--}}
-						{!! Form::textarea('textarea1','',['class' => 'materialize-textarea'], ['id'=>'textarea1'],['length'=>'120']) !!}
+						<textarea id="textarea1" name="my_story" class="materialize-textarea" length="120"></textarea>
+{{--						{!! Form::textarea('textarea1','',['class' => 'materialize-textarea'], ['id'=>'textarea1'],['length'=>'120']) !!}--}}
 						<label for="textarea1">My Story</label>
 					</div>
 
@@ -119,7 +124,8 @@
 					<div>
 
 						<img src="/edit_materialx/img/person.png">
-						{!! Form::file('image')!!}
+						{{--{!! Form::file('image')!!}--}}
+						<input type="file" name="image"/>
 
 					</div>
 
@@ -133,33 +139,37 @@
 					<h5> Personal Info. </h5>
 
 					<label for="Name"> Name </label>
-					{{--<input id="Name" type="text" class="validate" required>--}}
-					{!! Form::text('Name','',['class' => 'validate'], ['id'=>'Name']) !!}
+					<input id="Name" name="Full_name" type="text" class="validate" >
+{{--					{!! Form::text('Name','',['class' => 'validate'], ['id'=>'Name']) !!}--}}
 
 					<label for="Age"> Age </label>
-					{{--<input id="Age" type="text" class="validate" required>--}}
-					{!! Form::text('Age','',['class' => 'validate'], ['id'=>'Age']) !!}
+					<input id="Age" name="Age" type="text" class="validate" >
+{{--					{!! Form::text('Age','',['class' => 'validate'], ['id'=>'Age']) !!}--}}
 
 					<label for="Phone_No"> Phone No </label>
-					{{--<input id="Phone_No" type="text" class="validate" required>--}}
-					{!! Form::text('Phone_No','',['class' => 'validate'], ['id'=>'Phone_No']) !!}
+					<input id="Phone_No" name="Phone_No" type="text" class="validate" >
+{{--					{!! Form::text('Phone_No','',['class' => 'validate'], ['id'=>'Phone_No']) !!}--}}
+
+
 
 					{{--<label for="email"> email </label>--}}
-					{{--<input id="email" type="text" class="validate" required>--}}
-					{{--{!! Form::text('email','',['class' => 'validate'], ['id'=>'email']) !!}--}}
+					<input id="email" name="email" type="hidden"  value = '{{Auth::user()->email}}' >
+{{--					{!! Form::text('email','',['class' => 'validate'], ['id'=>'email']) !!}--}}
 
 					<label for="Address"> Address </label>
-					{{--<input id="Address" type="text" class="validate" required>--}}
-					{!! Form::text('Address','',['class' => 'validate'], ['id'=>'Address']) !!}
-
-
-					</div>
+					<input id="Address" name="Address" type="text" class="validate" >
+{{--					{!! Form::text('Address','',['class' => 'validate'], ['id'=>'Address']) !!}--}}
 
 					</div>
 
-				{!! Form::submit('Submit') !!}
+					</div>
 
-				{!! Form::close() !!}
+{{--				{!! Form::submit('Submit') !!}--}}
+				<input type="submit" value="Submit"/>
+
+{{--				{!! Form::close() !!}--}}
+
+		</form>
 
 			</div>
 
@@ -175,10 +185,10 @@
 		<script src="/materializeX/js/detectmobilebrowser.js"></script>
 
 		<script src="/materializeX/js/owl.carousel.min.js"></script>
-		{{--<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>--}}
+		<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>
 		<script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
 		<script src="/materializeX/js/sweet-alert.min.js"></script>
-		<script src="/materializeX/js/common.js"></script>
+		{{--<script src="/materializeX/js/common.js"></script>--}}
 		<script src="/materializeX/js/main.js"></script>
 
 
@@ -195,6 +205,7 @@
 			// $("table").stupidtable();
 			$(document).ready(function() {
 
+
 				// Ajax for our form
 				$('form.ajax').submit(function(e){
 					e.preventDefault();
@@ -205,44 +216,12 @@
 						type     : "POST",
 						url      : '/X_edit',
 						data     : formData,
-//						cache    : false,
 						success  : function(data) {
 							console.log(data);
 						}
 					});
 				});
-				$('form.ajjax').on('submit', function(event){
 
-					event.preventDefault();
-
-//					var formData = {
-//						name     : $('text[first_name]').val(),
-//						email    : $('text[name_subtitle]').val(),
-////						homepage : $('text[name=homepage]').val(),
-//						message  : $('textarea[textarea1]').val()
-//					}
-
-					var registerForm = $("#material_edit");
-					var formData = registerForm.serialize();
-
-					$.ajax({
-						type     : "POST",
-						 url      : '/X_edit',
-						data     : formData,
-						cache    : false,
-						success  : function(data) {
-							console.log(data);
-						}
-					});
-
-					 console.log(formData);
-
-					// alert($(this).attr('action'));
-
-					 alert('form is submited');
-
-//					return false;
-				});
 			});
 		</script>
 
