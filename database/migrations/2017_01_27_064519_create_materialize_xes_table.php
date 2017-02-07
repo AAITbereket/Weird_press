@@ -26,13 +26,14 @@ class CreateMaterializeXesTable extends Migration
             $table->string('Phone');
             $table->string('email'); // I can use the email submitted when registering
             $table->string('Address');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('google');
-            $table->string('pinterest');
-            $table->string('instagram');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('google')->nullable();
+            $table->string('pinterest')->nullable();
+            $table->string('instagram')->nullable();
             $table->string('Cv_document');
             $table->string('URL_to_access');
+            $table->timestamps();
         });
     }
 

@@ -24,8 +24,8 @@
 			<link rel="stylesheet" href="/materializeX/css/materialize.min.css" media="screen,projection" />
 			<link rel="stylesheet" href="/materializeX/css/bootstrap.css" media="screen,projection" />
 
-			<link rel="stylesheet" href="/materializeX/css/animate.min.css" media="screen,projection" />
-			<link rel="stylesheet" href="/materializeX/css/sweet-alert.css" media="screen,projection" />
+			{{--<link rel="stylesheet" href="/materializeX/css/animate.min.css" media="screen,projection" />--}}
+			{{--<link rel="stylesheet" href="/materializeX/css/sweet-alert.css" media="screen,projection" />--}}
 
 			<link rel="stylesheet" href="/materializeX/css/owl.carousel.css" media="screen,projection" />
 			<link rel="stylesheet" href="/materializeX/css/owl.transitions.css" media="screen,projection" />
@@ -124,10 +124,15 @@
 
 					<div>
 
-						<img src="/edit_materialx/img/person.png" style="max-height: 168px;">
+						<h3> Background Image Change</h3>
+						<br/>
+						<input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="Background_Image"/>
+						<br/>
+						<h3> Profile photo upload</h3>
+						{{--<img src="/edit_materialx/img/person.png" style="max-height: 168px;">--}}
 						{{--{!! Form::file('image')!!}--}}
-						<br/><br/>
-						<input class="waves-effect waves-teal btn-flat" type="file" name="image"/>
+						<br/>
+						<input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="profile_photo"/>
 
 					</div>
 
@@ -174,17 +179,24 @@
 
 					<br/>
 					<div class="input-field col s5">
-						<input class="waves-effect waves-teal btn-flat" type="file" name="image"/>
+						<input class="waves-effect waves-teal btn-flat" type="file" accept=".pdf,.doc,.docx,.RTF,.TXT" name="Cv_doc"/>
 					</div>
 
-					<div class="input-field col s6">
-						<select>
-							<option value="" disabled selected>Choose your option</option>
-							<option value="1">Option 1</option>
-							<option value="2">Option 2</option>
-							<option value="3">Option 3</option>
+					<div class="col s5" style="color: black;">
+
+						<h2> Choose color theme  </h2>
+						<br/>
+						<select name="Color_choice" class="browser-default" data-style="btn-primary" style="display: block;">
+							<option value="color1" style="background-color: #00bcd4;">Color 1</option>
+							<option value="color2" style="background-color: #ff4081;">Color 2</option>
+							<option value="color3" style="background-color: #C043D5;">Color 3</option>
+							<option value="color4" style="background-color: #73D077;">Color 4</option>
+							<option value="color5" style="background-color: #FE7448 ;">Color 5</option>
+							<option value="color6" style="background-color: #1ABBAC ;">Color 6</option>
+							<option value="color7" style="background-color: #EAB82E ;">Color 7</option>
+							<option value="color8" style="background-color: #799CAC;">Color 8</option>
 						</select>
-						<label>Materialize Select</label>
+						{{--<label>Materialize Select</label>--}}
 					</div>
 
 				</div>
@@ -274,6 +286,7 @@
 				$('form.ajax').submit(function(e){
 					e.preventDefault();
 					var registerForm = $("#material_edit");
+//					var formData = new FormData(this);
 					var formData = registerForm.serialize();
 
 					$.ajax({
@@ -289,11 +302,11 @@
 			});
 		</script>
 
-		<script>
-			$(document).ready(function() {
-				$('select').material_select();
-			});
-		</script>
+		{{--<script>--}}
+			{{--$(document).ready(function() {--}}
+				{{--$('select').material_select();--}}
+			{{--});--}}
+		{{--</script>--}}
 
 
 	</div>

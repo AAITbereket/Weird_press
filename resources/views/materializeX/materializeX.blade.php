@@ -58,7 +58,7 @@
 
   <!-- Choose your default colors -->
   <link rel="stylesheet" href="/materializeX/css/colors/{{$Color_choice}}">
-  <!-- <link rel="stylesheet" href="/materializeX/css/colors/color2.css"> -->
+   {{--<link rel="stylesheet" href="/materializeX/css/colors/color2.css">--}}
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color3.css"> -->
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color4.css"> -->
   <!-- <link rel="stylesheet" href="/materializeX/css/colors/color5.css"> -->
