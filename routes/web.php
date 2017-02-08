@@ -33,6 +33,8 @@ Route::get('lonely_chosed' , 'lonelyController@templateChosed' );
 // ### Drop page
 Route::get('DropPage' , 'HomeController@dropPage' );
 
+// ### Edit template
+Route::get('edit_template' , 'HomeController@editTemplate' );
 
 Route::get('/', function () {
     return view('welcome');

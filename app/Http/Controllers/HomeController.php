@@ -114,4 +114,37 @@ class HomeController extends Controller
 
     }
 
+    public function editTemplate()
+        {
+
+            if (! Auth::check())
+            {
+                return redirect('login');
+            }
+
+            else{
+
+                $email = Auth::user()->email;
+                $table_material = materializeX::where('Logged_user_email', $email )->get();
+                $table_lonely = lonely_main_table::where('Logged_user_email', $email )->get();
+
+                if($table_material->count())
+                {
+                    $materializeX = $table_material[0];
+                    return view('edit_materializeX.material_edit', compact('materializeX'));
+                }
+                elseif ($table_lonely->count())
+                {
+                    $lonely_main_table = $table_lonely[0];
+                    return view('edit_lonely.lonely_edit', compact('lonely_main_table'));
+                }
+
+                else
+                {
+                    return redirect('template_choose');
+                }
+
+            }
+
+        }
 }
