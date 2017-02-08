@@ -143,13 +143,31 @@
 
             <br/><hr/>
 
-            <h4 style="margin:60px 0 30px;"> Gallery  </h4>
+            <h4 style="margin:60px 0 30px;"> Edit Photos in Gallery  </h4>
 
             <div class="row">
 
                 <div class="col-xs-5">
 
-                    Upload photo : <input type="file" name="gallery_photo">
+                    Upload photos : <input type="file" name="gallery_photo">
+
+                </div>
+
+                <div class="col-md-5">
+
+                    <h4> Delete Uploaded Photo  </h4>
+
+                    <select name="Color_choice" class="dropdown-toggle col-md-6" data-style="btn-primary" >
+
+                        <option value="Photo{{" ".$id_photo}}">Photo {{" ".$id_photo}}</option>
+
+                    </select>
+                    <div class="col-md-4">
+
+                        <button class="btn btn-warning"> Delete </button>
+
+                    </div>
+
 
                 </div>
 

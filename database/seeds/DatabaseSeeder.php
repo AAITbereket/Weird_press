@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
          $this->call(materialize_default_seeder::class);
         $this->call(lonely_default::class);
-
+        $this->call(lonely_default_images::class);
+        
     }
 }
 
