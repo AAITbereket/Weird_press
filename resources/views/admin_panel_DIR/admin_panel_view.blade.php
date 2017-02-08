@@ -34,13 +34,20 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li>
 
+                    <li>
+                      <a href="{{ url('/DropPage') }}">
+                        Drop Page <i class="fa fa-trash-o fa-lg" style="font-size: 22px;"></i>
+                      </a>
+                    </li>
+
+                    <li>
                       <a href="{{ url('/logout') }}"
                          onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                         <i class="fa fa-sign-out pull-right"></i> Log Out
-                      </a></li>
+                      </a>
+                    </li>
 
                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
@@ -71,7 +78,6 @@
                 <div class="profile_info">
                   <span>Welcome,</span>
                   <h2>{{ Auth::user()->name }}</h2>
-                  {{--<h2>{{ Auth::user()->email }}</h2>--}}
                 </div>
               </div>
               <!-- /menu profile quick info -->

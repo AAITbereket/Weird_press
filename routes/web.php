@@ -30,6 +30,9 @@ Route::get('material_chosed' , 'materializeXController@templateChosed' );
 // ##### when a lonely template is chosen
 Route::get('lonely_chosed' , 'lonelyController@templateChosed' );
 
+// ### Drop page
+Route::get('DropPage' , 'HomeController@dropPage' );
+
 
 Route::get('/', function () {
     return view('welcome');

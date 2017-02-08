@@ -83,4 +83,35 @@ class HomeController extends Controller
         }
 
     }
+
+
+    public function dropPage()
+    {
+        if (! Auth::check())
+        {
+            return redirect('login');
+        }
+
+        else{
+            $email = Auth::user()->email;
+            $table_material = materializeX::where('Logged_user_email', $email )->get();
+            $table_lonely = lonely_main_table::where('Logged_user_email', $email )->get();
+
+            if($table_material->count())
+            {
+                materializeX::where('Logged_user_email', $email )->delete();
+                return redirect('admin_panel');
+            }
+            elseif ($table_lonely->count())
+            {
+                lonely_main_table::where('Logged_user_email', $email )->delete();
+                return redirect('admin_panel');
+            }
+            
+        }
+
+        return redirect('admin_panel');
+
+    }
+
 }
