@@ -342,7 +342,7 @@
                 var Main_div_height = $("body").prop('scrollHeight');
 
 //                Main_div_height += $('footer').height();
-                alert(Main_div_height);
+//                alert(Main_div_height);
                 $("#leftCol").css('height',Main_div_height);
                 $("#leftCol").css('position','fixed');
             </script>

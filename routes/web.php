@@ -39,7 +39,6 @@ Route::get('login_', function(){
     return view('Login/login_temp');
 });
 
-
 Route::get('check' , function(){
     return view('admin_panel_template_view.lonely_admin');
 });

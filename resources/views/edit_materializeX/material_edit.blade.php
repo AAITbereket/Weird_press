@@ -285,8 +285,9 @@
 				// Ajax for our form
 				$('form.ajax').submit(function(e){
 					e.preventDefault();
+
 					var registerForm = $("#material_edit");
-//					var formData = new FormData(this);
+//					var formData = new FormData(registerForm);
 					var formData = registerForm.serialize();
 
 					$.ajax({
