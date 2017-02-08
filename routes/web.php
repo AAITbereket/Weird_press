@@ -36,6 +36,10 @@ Route::get('DropPage' , 'HomeController@dropPage' );
 // ### Edit template
 Route::get('edit_template' , 'HomeController@editTemplate' );
 
+// ### Download Cv 
+
+Route::get('downloadCV' , 'materializeXController@downloadCV' );
+
 Route::get('/', function () {
     return view('welcome');
 });

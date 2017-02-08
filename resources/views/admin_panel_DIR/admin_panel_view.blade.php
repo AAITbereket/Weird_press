@@ -66,7 +66,7 @@
           <div class="col-md-3 left_col" id="leftCol">
             <div class="left_col scroll-view">
               <div class="navbar nav_title" style="border: 0;">
-                <a href="index.html" class="site_title"> <span>Weird Press</span></a>
+                <a href="#" class="site_title"> <span>Weird Press</span></a>
               </div>
 
               <div class="clearfix"></div>

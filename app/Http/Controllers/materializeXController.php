@@ -121,4 +121,15 @@ class materializeXController extends Controller
 
     }
 
+    public function downloadCV()
+    {
+        $file= public_path(). "/materializeX/Cv_uploads/Flash.pdf";
+
+        $headers = array(
+            'Content-Type: application/pdf',
+        );
+
+        return response()->download($file, 'filename.pdf', $headers);
+    }
+
 }
