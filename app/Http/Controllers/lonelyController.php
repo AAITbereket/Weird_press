@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\lonely_main_table;
+use App\lonely_image_table;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
@@ -13,15 +14,17 @@ class lonelyController extends Controller
 
     public function lonely_load_from_DB()
     {
+        $email = Auth::user()->email;
+
         $lonely_main_table = lonely_main_table::first();
-//        $lonely = materializeX::first();
-//        $hello = "hello";
-//        $materializeX = materializeX::first();
-//        $materializeX12 = lonely_main_table::first();
+        $lonely_gallery = lonely_image_table::where('Logged_user_email', $email )->get();
+        
+        if(! $lonely_gallery->count())
+        {
+            $lonely_gallery = lonely_image_table::where('Logged_user_email', 'example@example.com' )->get();
+        }
 
-//        return view('lonely.lonely', compact('lonely_main_table') );
-
-            return view('lonely.lonely', compact('lonely_main_table'));
+            return view('lonely.lonely', compact('lonely_main_table','lonely_gallery'));
     }
 
     public function show_preview()
@@ -52,4 +55,7 @@ class lonelyController extends Controller
 
         return redirect('admin_panel');
     }
+    
+    
+    
 }

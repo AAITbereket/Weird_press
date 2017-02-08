@@ -15,6 +15,8 @@
         $Phone = $lonely_main_table['Phone'];
         $URL_to_access = $lonely_main_table['URL_to_access'];
 
+        $Photo_gallery = $lonely_gallery;
+
 ?>
 
 
@@ -64,7 +66,7 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <a href="index.html"><img src="/lonely/img/logo.png" alt="" /></a>
+        <a href="#"><img src="/lonely/img/logo.png" alt="" /></a>
     </div>
     <div class="page-scroll">
         <a href="#about">
@@ -208,14 +210,11 @@
             <div class="col-sm-12 col-md-12 col-lg-12" >
                 <div class="wow bounceInUp" data-wow-delay="0.4s">
                     <div id="owl-works" class="owl-carousel">
-                        <div class="item"><a href="/lonely/img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/4.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/5.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/6.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/7.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/7.jpg" class="img-responsive " alt="img"></a></div>
-                        <div class="item"><a href="/lonely/img/gallery/8.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/8.jpg" class="img-responsive " alt="img"></a></div>
+
+                        @foreach($Photo_gallery as $photo)
+                            <div class="item"><a href="{{$photo['Photo_URL']}}" title="This is an image title" data-lightbox-gallery="gallery1"><img src="{{$photo['Photo_URL']}}" class="img-responsive" alt="img"></a></div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
