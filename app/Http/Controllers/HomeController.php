@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\materializeX;
 use App\lonely_main_table;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -147,4 +148,22 @@ class HomeController extends Controller
             }
 
         }
+
+    public function sendMail()
+    {
+        $data = array('name'=>"Virat Gandhi");
+
+        Mail::send(['text'=>'mail'], $data, function($message) {
+            $message->to('abc@gmail.com', 'Tutorials Point')->subject
+            ('Laravel Basic Testing Mail');
+            $message->from('xyz@gmail.com','Virat Gandhi');
+        });
+        echo "Basic Email Sent. Check your inbox.";
+    }
 }
+
+
+
+
+
+

@@ -45,95 +45,58 @@
 
         <div class="container">
 
-            <h3> Lonely template edit </h3>
+            <h3> Lonely template edit Images </h3>
 
             <div class="row">
 
                 <div class="col-xs-4">
 
-                    Name :<input type="text" class="form-control" placeholder="Type Name to be displayed" name="Name">
+                    Change Background Image : <input type="file" name="Bg_image">
 
                 </div>
-
-
-            </div>
-
-            <hr/>
-            <br/>
-            <div class="row">
 
                 <div class="col-xs-4">
 
-                    Name subtitle : <textarea rows="1" name="name_subtitle"></textarea>
+                    My story left side image : <input type="file" name="My_Story_left_image">
 
                 </div>
-
-                <div class="col-xs-5">
-
-                    Story title : <textarea rows="1" name="story_stitle"></textarea>
-
-                </div>
-
-            </div>
-
-            <hr/>
-            <br/>
-
-            <div class="row">
-
-                <div class="col-xs-4">
-
-                    My Story : <textarea rows="4" name="Main_story"></textarea>
-
-                </div>
-
-                <div class="col-xs-5">
-
-                    Block Qoute : <textarea rows="1" name="block_qoute"></textarea>
-
-                </div>
-
 
             </div>
 
             <br/><hr/>
-            <h4> Fa-icons about me </h4>
 
-             <div class="row">
+            <h4 style="margin:60px 0 30px;"> Edit Photos in Gallery  </h4>
 
-                 <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="Bachelor of design" name="Hobby_one">
-                 </div>
+            <div class="row">
 
-                 <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="10x failed in love" name="Hobby_two">
-                 </div>
+                <div class="col-xs-5">
 
-                 <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="I love traveling" name="Hobby_three">
-                 </div>
+                    Upload photos : <input type="file" name="gallery_photo">
 
-                 <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="I'm photographer" name="Hobby_four">
-                 </div>
+                </div>
 
-             </div>
+                <div class="col-md-5">
 
-            <br/><hr/>
-            <div row>
+                    <h4> Delete Uploaded Photo  </h4>
 
-                <div class="col-sm-4">
+                    <select name="photo" class="dropdown-toggle col-md-6" data-style="btn-primary" >
 
-                    <b> Phone No: </b><input type="text" class="form-control" placeholder="+0123456789" name="Name">
+                        {{--<option value="Photo{{" ".$id_photo}}">Photo {{" ".$id_photo}}</option>--}}
+
+                    </select>
+                    <div class="col-md-4">
+
+                        <button class="btn btn-warning"> Delete </button>
+
+                    </div>
+
 
                 </div>
 
             </div>
-            <br>
-            <div class="col-sm-7" >
-                <button style="float: right;" class="btn btn-primary btn-md"> Submit </button>
-            </div>
-            <br/><br/><hr/>
+
+            <br/><hr/>
+            <button class="btn btn-primary"> Submit </button>
 
         </div>
 

@@ -78,7 +78,7 @@
 
 			<div class="container">
 
-			<h5>Materialize Edit</h5>
+			<h5>Materialize Edit text and links</h5>
 
      {{--{!! Form::open( array( 'class' => 'ajax', 'files' => true, 'id' => 'material_edit')) !!}--}}
 
@@ -121,19 +121,21 @@
 					</div>
 
 					<br>
+					<div style="color: black;">
 
-					<div>
-
-						<h3> Background Image Change</h3>
+						<h2> Choose color theme  </h2>
 						<br/>
-						<input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="Background_Image"/>
-						<br/>
-						<h3> Profile photo upload</h3>
-						{{--<img src="/edit_materialx/img/person.png" style="max-height: 168px;">--}}
-						{{--{!! Form::file('image')!!}--}}
-						<br/>
-						<input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="profile_photo"/>
-
+						<select name="Color_choice" class="browser-default" data-style="btn-primary" style="display: block;">
+							<option value="color1" style="background-color: #00bcd4;">Color 1</option>
+							<option value="color2" style="background-color: #ff4081;">Color 2</option>
+							<option value="color3" style="background-color: #C043D5;">Color 3</option>
+							<option value="color4" style="background-color: #73D077;">Color 4</option>
+							<option value="color5" style="background-color: #FE7448 ;">Color 5</option>
+							<option value="color6" style="background-color: #1ABBAC ;">Color 6</option>
+							<option value="color7" style="background-color: #EAB82E ;">Color 7</option>
+							<option value="color8" style="background-color: #799CAC;">Color 8</option>
+						</select>
+						{{--<label>Materialize Select</label>--}}
 					</div>
 
 				</div>
@@ -144,7 +146,7 @@
 				<div class="col s5 offset-s1">
 
 					<h5> Personal Info. </h5>
-
+					<br/>
 					<label for="Name"> Name </label>
 					<input id="Name" name="Full_name" type="text" class="validate" >
 {{--					{!! Form::text('Name','',['class' => 'validate'], ['id'=>'Name']) !!}--}}
@@ -172,36 +174,6 @@
 					</div>
 
 				<br/><hr/>
-
-			<h2> Upload your CV  </h2>
-
-				<div class="row">
-
-					<br/>
-					<div class="input-field col s5">
-						<input class="waves-effect waves-teal btn-flat" type="file" accept=".pdf,.doc,.docx,.RTF,.TXT" name="Cv_doc"/>
-					</div>
-
-					<div class="col s5" style="color: black;">
-
-						<h2> Choose color theme  </h2>
-						<br/>
-						<select name="Color_choice" class="browser-default" data-style="btn-primary" style="display: block;">
-							<option value="color1" style="background-color: #00bcd4;">Color 1</option>
-							<option value="color2" style="background-color: #ff4081;">Color 2</option>
-							<option value="color3" style="background-color: #C043D5;">Color 3</option>
-							<option value="color4" style="background-color: #73D077;">Color 4</option>
-							<option value="color5" style="background-color: #FE7448 ;">Color 5</option>
-							<option value="color6" style="background-color: #1ABBAC ;">Color 6</option>
-							<option value="color7" style="background-color: #EAB82E ;">Color 7</option>
-							<option value="color8" style="background-color: #799CAC;">Color 8</option>
-						</select>
-						{{--<label>Materialize Select</label>--}}
-					</div>
-
-				</div>
-
-				<br/><hr/>
 				<h2> Edit Social media links  </h2>
 			<br/>
 			    <div class="row">
@@ -225,22 +197,9 @@
 
 				</div>
 			<br/><hr/>
-			<div class="row">
-
-				<div class="col s3">
-					<br/><br/>
-					<h3> localhost:8000/mypages/</h3>
-				</div>
-
-				<div class=" col s5">
-					<label for="URL_to_access"> URL to access to your page </label>
-					<input id="URL_to_access" name="URL_to_access" type="text" data-error="wrong" data-success="right" class="validate" >
-				</div>
-
-			</div>
 
 {{--				{!! Form::submit('Submit') !!}--}}
-				<button type="submit" class="btn waves-effect waves-light">  Submit </button>
+				<button type="submit" class="btn waves-effect waves-light">  Publish  </button>
 
 {{--				{!! Form::close() !!}--}}
 
@@ -287,7 +246,6 @@
 					e.preventDefault();
 
 					var registerForm = $("#material_edit");
-//					var formData = new FormData(registerForm);
 					var formData = registerForm.serialize();
 
 					$.ajax({

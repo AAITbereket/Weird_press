@@ -40,6 +40,17 @@ Route::get('edit_template' , 'HomeController@editTemplate' );
 
 Route::get('downloadCV' , 'materializeXController@downloadCV' );
 
+// ## check mail send 
+Route::get('sendMail' , 'HomeController@sendMail' ); // not working
+
+Route::get('edit_Image' , function(){
+    return view('edit_materializeX.material_image_edit');
+});
+
+Route::get('Image_lonely' , function(){
+    return view('edit_lonely.lonely_image_edit');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
