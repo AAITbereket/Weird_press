@@ -51,7 +51,7 @@ class materializeXController extends Controller
         $Linkdein = $request->Linkdein;
         $email = $request->email;
 
-        $table = materializeX::where('Logged_user_email', 'hello@hell.com' )->get();
+        $table = materializeX::where('Logged_user_email', $email )->get();
 
         if($table->count())
         {

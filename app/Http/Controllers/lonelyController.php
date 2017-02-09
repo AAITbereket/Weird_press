@@ -55,7 +55,56 @@ class lonelyController extends Controller
 
         return redirect('admin_panel');
     }
-    
-    
-    
+
+    public function Ajax_edit_texts_And_links(Request $request)
+    {
+        // upload images
+//        $Background_Image = $request->file('Background_Image');
+//        $name = $Background_Image->getClientOriginalName();
+//        return response()->json(request()->all());
+//        $profile_photo = $request->file('profile_photo');
+//        $Cv_doc = $request->file('Cv_doc');
+//
+//        $destination_images = 'materializeX/images/uploads';
+//        $destination_Cv = 'materializeX/Cv_uploads';
+//
+//        $Background_Image->move($destination_images,$Background_Image->getClientOriginalName());
+//
+//        $profile_photo->move($destination_images,$profile_photo->getClientOriginalName());
+//
+//        $Cv_doc->move($destination_Cv,$Cv_doc->getClientOriginalName());
+
+        $name = $request->Name;
+        $name_subtitle = $request->name_subtitle;
+        $story_stitle = $request->story_stitle;
+        $Main_story = $request->Main_story;
+        $Phone_No = $request->Phone_No;
+        $block_qoute = $request->block_qoute;
+        $Hobby_one = $request->Hobby_one;
+        $Hobby_two = $request->Hobby_two;
+        $Hobby_three = $request->Hobby_three;
+        $Hobby_four = $request->Hobby_four;
+
+        $email = Auth::user()->email;
+
+        $table = lonely_main_table::where('Logged_user_email', $email )->get();
+
+        if($table->count())
+        {
+            $table[0]->User_Name_display = $name;
+            $table[0]->Name_subtitle = $name_subtitle ;
+            $table[0]->Story_title = $story_stitle ;
+            $table[0]->My_story = $Main_story ;
+            $table[0]->Block_qoute = $block_qoute ;
+            $table[0]->Hobby_one = $Hobby_one ;
+            $table[0]->Hobby_two = $Hobby_two ;
+            $table[0]->Phone = $Phone_No ;
+            $table[0]->Hobby_three = $Hobby_three ;
+            $table[0]->Hobby_four = $Hobby_four ;
+            $table[0]->save();
+            return response()->json($table);
+        }
+
+    }
+
 }

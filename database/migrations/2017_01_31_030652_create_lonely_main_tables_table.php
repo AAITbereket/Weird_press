@@ -29,6 +29,7 @@ class CreateLonelyMainTablesTable extends Migration
             $table->string('Hobby_four');
             $table->string('Phone');
             $table->string('URL_to_access');
+            $table->timestamps();
         });
     }
 

@@ -60,8 +60,11 @@
         <div class="container">
 
             <h3> Lonely template edit </h3>
+    <form method="POST" class="ajax" id="lonely_edit">
 
-            <div class="row">
+        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+
+        <div class="row">
 
                 <div class="col-xs-4">
 
@@ -137,17 +140,17 @@
 
                 <div class="col-sm-4">
 
-                    <b> Phone No: </b><input type="text" class="form-control" value="{{$Phone}}" placeholder="+0123456789" name="Name">
+                    <b> Phone No: </b><input type="text" class="form-control" value="{{$Phone}}" placeholder="+0123456789" name="Phone_No">
 
                 </div>
 
             </div>
             <br>
             <div class="col-sm-7" >
-                <button style="float: right;" class="btn btn-primary btn-md"> Submit </button>
+                <button type="submit" style="float: right;" class="btn btn-primary btn-md"> Submit </button>
             </div>
             <br/><br/><hr/>
-
+        </form>
         </div>
 
         <script src="/lonely/js/jquery.min.js"></script>
@@ -171,6 +174,31 @@
             //                Main_div_height += $('footer').height();
             $("#leftCol").css('height',Main_div_height);
             $("#leftCol").css('position','fixed');
+        </script>
+
+        <script>
+            // $("table").stupidtable();
+            $(document).ready(function() {
+
+
+                // Ajax for our form
+                $('form.ajax').submit(function(e){
+                    e.preventDefault();
+
+                    var registerForm = $("#lonely_edit");
+                    var formData = registerForm.serialize();
+
+                    $.ajax({
+                        type     : "POST",
+                        url      : '/lonely_edit_texts_And_Links',
+                        data     : formData,
+                        success  : function(data) {
+                            console.log(data);
+                        }
+                    });
+                });
+
+            });
         </script>
 
         </body>

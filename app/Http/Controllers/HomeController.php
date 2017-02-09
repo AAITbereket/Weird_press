@@ -43,8 +43,16 @@ class HomeController extends Controller
         }
         elseif ($table_lonely->count())
         {
+            $lonely_gallery = lonely_image_table::where('Logged_user_email', $email )->get();
+
+            if(! $lonely_gallery->count())
+            {
+                $lonely_gallery = lonely_image_table::where('Logged_user_email', 'example@example.com' )->get();
+            }
+
             $lonely_main_table = $table_lonely[0];
-            return view('lonely.lonely', compact('lonely_main_table'));
+            return view('lonely.lonely', compact('lonely_main_table','lonely_gallery'));
+            
         }
         else
         {

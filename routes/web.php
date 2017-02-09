@@ -45,6 +45,12 @@ Route::get('sendMail' , 'HomeController@sendMail' ); // not working
 // ## edit template Images 
 Route::get('edit_Images' , 'HomeController@editImage' );
 
+// ## material template edit texts and links
+Route::post('edit_texts_And_Links', 'materializeXController@Ajax_edit_texts_And_links');
+
+// ## lonely template edit texts and links
+Route::post('lonely_edit_texts_And_Links', 'lonelyController@Ajax_edit_texts_And_links');
+
 
 
 Route::get('edit_Image' , function(){
@@ -81,7 +87,6 @@ Route::get('X_edit' , function(){
 
 Route::get('temp', 'materializeXController@temp');
 
-Route::post('edit_texts_And_Links', 'materializeXController@Ajax_edit_texts_And_links');
 //Route::get('temp', 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
@@ -108,4 +113,4 @@ Route::get('register_custom' , function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@showAdminPanel');

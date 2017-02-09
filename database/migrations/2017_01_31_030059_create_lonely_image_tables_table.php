@@ -17,6 +17,7 @@ class CreateLonelyImageTablesTable extends Migration
             $table->increments('id');
             $table->string('Logged_user_email');
             $table->string('Photo_URL');
+            $table->timestamps();
         });
     }
 

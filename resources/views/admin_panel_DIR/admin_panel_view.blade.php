@@ -37,7 +37,7 @@
 
                     <li>
                       <a href="{{ url('/DropPage') }}">
-                        Drop Page <i class="fa fa-trash-o fa-lg" style="font-size: 22px;"></i>
+                        Drop template <i class="fa fa-trash-o fa-lg" style="font-size: 22px; "></i>
                       </a>
                     </li>
 
