@@ -48,10 +48,10 @@
 
             <h2 style="font-size: 28px;"> Welcome to weird press where you can create your own personal pages </h2>
 
-            <h3> choose template </h3>
+            <blockquote> choose template </blockquote>
 
-            <hr/>
-            <h4> Material X</h4>
+            <br/>
+            <h4> <b> Material X </b> </h4>
 
             <div class="row">
 
@@ -71,12 +71,11 @@
 
                 </div>
 
-
             </div>
 
             <br/><hr/>
 
-            <h4> Lonely responsive </h4>
+            <h4> <b> Lonely responsive </b> </h4>
 
             <div class="row">
 
@@ -99,33 +98,13 @@
 
             </div>
 
-
+            <br/>
             <hr/>
-            <h4> Material X</h4>
-
-            <div class="row">
-
-                <div class="col-sm-8" >
-
-                    <img src="/choose_template/img/materilizeX.png">
-
-                </div>
-
-                <div class="col-sm-3">
-                    <p>
-                        MaterialX is a material design Resume and Portfolio Template based on Twitter Bootstrap and Materialize, developed for professional to display their Profile, Resume etc. Easily customizable and fully responsive for all device.
-                    </p>
-
-                    <button class="btn btn-primary"> choose </button>
-                    <button class="btn btn-info"> preview </button>
-
-                </div>
-
-
+            <div>
+                <blockquote> You can access your page at /MyPage/your email </blockquote>
             </div>
 
-            <br/><hr/>
-
+            <br/>
 
         </div>
 

@@ -56,7 +56,9 @@ class HomeController extends Controller
         }
         else
         {
+
             echo "Manhe plz go back and create user account first ".$email;
+
         }
     }
 

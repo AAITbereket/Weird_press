@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="links" style="font-size: 20px; color: #fff;">
-                    create your own personal page
+                     Best place to create your own personal page
                 </div>
 
             </div>
