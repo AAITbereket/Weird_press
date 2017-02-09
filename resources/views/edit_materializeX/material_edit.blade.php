@@ -6,6 +6,26 @@
 
 	<div class="" style="max-width: 990px;" id="main_display" xmlns:Auth="http://www.w3.org/1999/xhtml">
 
+		<?php
+
+
+		$Color_choice = $materializeX['Color_choice'] . '.css';
+		$User_Name_display = $materializeX['User_Name_display'];
+		$Name_subtitle = $materializeX['Name_subtitle'];
+		$My_story = $materializeX['My_story'];
+		$Age = $materializeX ['Age'];
+		$Phone= $materializeX['Phone'];
+		$email = $materializeX['email'];
+		$facebook = $materializeX['facebook'];
+		$twitter = $materializeX['twitter'];
+		$google = $materializeX['google+'];
+		$pinterest = $materializeX['pinterest'];
+		$instagram = $materializeX['instagram'];
+		$Address = $materializeX['Address'];
+
+
+		?>
+
 
 
 		<head>
@@ -93,7 +113,7 @@
 				{{--{!! Form::hidden('email', '{Auth::user->email}'  ,['value' =>'{Auth::user->email}' ]) !!}--}}
 
 				<div class="input-field col s4">
-					<input id="first_name" name="Name_display" type="text" class="validate">
+					<input id="first_name" name="Name_display" value="{{$User_Name_display}}" type="text" class="validate">
 {{--					{!! Form::text('first_name','',['class' => 'validate'], ['id'=>'first_name']) !!}--}}
 
 					<label for="first_name"> HI I am </label>
@@ -102,7 +122,7 @@
 				<div class="input-field col s2"></div>
 
 				<div class="input-field col s4">
-					<input id="first_name" name="subtitle" type="text" class="validate">
+					<input id="first_name" name="subtitle" value="{{$Name_subtitle}}" type="text" class="validate">
 {{--					{!! Form::text('name_subtitle','',['class' => 'validate'], ['id'=>'name_subtitle']) !!}--}}
 					<label for="name_subtitle"> Name subtitle </label>
 				</div>
@@ -115,7 +135,7 @@
 				<div class="col s5">
 
 					<div class="input-field">
-						<textarea id="textarea1" name="my_story" class="materialize-textarea" length="120"></textarea>
+						<textarea id="textarea1" name="my_story" class="materialize-textarea" length="120"> {{$My_story}}</textarea>
 {{--						{!! Form::textarea('textarea1','',['class' => 'materialize-textarea'], ['id'=>'textarea1'],['length'=>'120']) !!}--}}
 						<label for="textarea1">My Story</label>
 					</div>
@@ -126,6 +146,7 @@
 						<h2> Choose color theme  </h2>
 						<br/>
 						<select name="Color_choice" class="browser-default" data-style="btn-primary" style="display: block;">
+							<option value="color1" style="background-color: #00bcd4;" selected="selected">{{$materializeX['Color_choice']}}</option>
 							<option value="color1" style="background-color: #00bcd4;">Color 1</option>
 							<option value="color2" style="background-color: #ff4081;">Color 2</option>
 							<option value="color3" style="background-color: #C043D5;">Color 3</option>
@@ -147,16 +168,16 @@
 
 					<h5> Personal Info. </h5>
 					<br/>
-					<label for="Name"> Name </label>
-					<input id="Name" name="Full_name" type="text" class="validate" >
+					{{--<label for="Name"> Name </label>--}}
+					{{--<input id="Name" name="Full_name" type="text" class="validate" >--}}
 {{--					{!! Form::text('Name','',['class' => 'validate'], ['id'=>'Name']) !!}--}}
 
 					<label for="Age"> Age </label>
-					<input id="Age" name="Age" type="text" class="validate" >
+					<input id="Age" name="Age" value="{{$Age }}" type="text" class="validate" >
 {{--					{!! Form::text('Age','',['class' => 'validate'], ['id'=>'Age']) !!}--}}
 
 					<label for="Phone_No"> Phone No </label>
-					<input id="Phone_No" name="Phone_No" type="text" class="validate" >
+					<input id="Phone_No" name="Phone_No" value="{{$Phone}}" type="text" class="validate" >
 {{--					{!! Form::text('Phone_No','',['class' => 'validate'], ['id'=>'Phone_No']) !!}--}}
 
 
@@ -166,7 +187,7 @@
 {{--					{!! Form::text('email','',['class' => 'validate'], ['id'=>'email']) !!}--}}
 
 					<label for="Address"> Address </label>
-					<input id="Address" name="Address" type="text" class="validate" >
+					<input id="Address" name="Address" value="{{$Address}}" type="text" class="validate" >
 {{--					{!! Form::text('Address','',['class' => 'validate'], ['id'=>'Address']) !!}--}}
 
 					</div>
@@ -180,19 +201,19 @@
 
 					<div class="col-md-3">
 						<label for="facebook"> Facebook </label>
-						<input id="facebook" name="facebook" type="text" class="validate" >
+						<input id="facebook" name="facebook" type="text" value="{{$facebook }}" class="validate" >
 					</div>
 					<div class="col-md-3">
 						<label for="twitter"> Twitter </label>
-						<input id="twitter" name="Twitter" type="text" class="validate" >
+						<input id="twitter" name="Twitter" type="text" value="{{$twitter}}" class="validate" >
 					</div>
 					<div class="col-md-3">
 						<label for="google+"> google+ </label>
-						<input id="google+" name="google" type="text" class="validate" >
+						<input id="google+" name="google" type="text" value="{{$google}}" class="validate" >
 					</div>
 					<div class="col-md-3">
 						<label for="Linkdein"> Linkdein </label>
-						<input id="Linkdein" name="Linkdein" type="text" class="validate" >
+						<input id="Linkdein" name="Linkdein" type="text" value="{{$pinterest}}" class="validate" >
 					</div>
 
 				</div>
@@ -250,7 +271,7 @@
 
 					$.ajax({
 						type     : "POST",
-						url      : '/X_edit',
+						url      : '/edit_texts_And_Links',
 						data     : formData,
 						success  : function(data) {
 							console.log(data);

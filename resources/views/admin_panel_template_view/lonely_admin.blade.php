@@ -23,6 +23,8 @@
         $Phone = $lonely_main_table['Phone'];
         $URL_to_access = $lonely_main_table['URL_to_access'];
 
+        $Photo_gallery = $lonely_gallery;
+
         ?>
 
         <head>
@@ -67,12 +69,12 @@
         </head>
 
         <body id="page-top" data-spy="scroll" data-target=".navbar-custom">
-        <!-- Preloader -->
+        {{--<!-- Preloader -->--}}
         <div id="preloader">
             <div id="load"></div>
         </div>
 
-        <!-- Section: intro -->
+        {{--<!-- Section: intro -->--}}
         <section id="intro" class="intro">
 
             <div class="slogan">
@@ -84,9 +86,9 @@
                 </a>
             </div>
         </section>
-        <!-- /Section: intro -->
+        {{--<!-- /Section: intro -->--}}
 
-        <!-- Navigation -->
+        {{--<!-- Navigation -->--}}
         <div id="navigation" style="margin-left: -10px; width: 990px">
             <nav class="navbar navbar-custom" role="navigation">
                 <div class="container">
@@ -109,17 +111,17 @@
                                     <li><a href="#contact">Talk to me</a></li>
                                 </ul>
                             </div>
-                            <!-- /.Navbar-collapse -->
+                            {{--<!-- /.Navbar-collapse -->--}}
 
                         </div>
                     </div>
                 </div>
-                <!-- /.container -->
+                {{--<!-- /.container -->--}}
             </nav>
         </div>
-        <!-- /Navigation -->
+        {{--<!-- /Navigation -->--}}
 
-        <!-- Section: about -->
+        {{--<!-- Section: about -->--}}
         <section id="about" class="home-section">
             <div class="container">
                 <div class="row">
@@ -155,9 +157,9 @@
                 </div>
             </div>
         </section>
-        <!-- /Section: about -->
+        {{--<!-- /Section: about -->--}}
 
-        <!-- Section: separator -->
+        {{--<!-- Section: separator -->--}}
         <section id="separator" class="home-section parallax text-center"  style="min-width: 990px" data-stellar-background-ratio="0.5">
 
             <div class="container">
@@ -197,10 +199,10 @@
                 </div>
             </div>
         </section>
-        <!-- /Section: separator -->
+        {{--<!-- /Section: separator -->--}}
 
 
-        <!-- Section: gallery -->
+        {{--<!-- Section: gallery -->--}}
         <section id="gallery" class="home-section text-center bg-gray" style="padding-bottom: 0px;">
 
             <div class="container">
@@ -221,26 +223,22 @@
                     <div class="col-sm-8 col-md-8 col-lg-12" >
                         <div class="wow bounceInUp" data-wow-delay="0.4s">
                             <div id="owl-works" class="owl-carousel">
-                                <div class="item"><a href="/lonely/img/gallery/1.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/1.jpg" class="img-responsive" alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/2.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/2.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/3.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/3.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/4.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/4.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/5.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/5.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/6.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/6.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/7.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/7.jpg" class="img-responsive " alt="img"></a></div>
-                                <div class="item"><a href="/lonely/img/gallery/8.jpg" title="This is an image title" data-lightbox-gallery="gallery1"><img src="/lonely/img/gallery/8.jpg" class="img-responsive " alt="img"></a></div>
+
+                                @foreach($Photo_gallery as $photo)
+                                    <div class="item"><a href="{{$photo['Photo_URL']}}" title="This is an image title" data-lightbox-gallery="gallery1"><img src="{{$photo['Photo_URL']}}" class="img-responsive" alt="img"></a></div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- /Section: services -->
+        {{--<!-- /Section: services -->--}}
 
 
 
 
-        <!-- Section: contact -->
+        {{--<!-- Section: contact -->--}}
         <section id="contact" class="home-section text-center" style="padding-bottom: 70px;">
             <div class="heading-contact">
                 <div class="container">
@@ -311,7 +309,7 @@
 
             </div>
         </section>
-        <!-- /Section: contact -->
+        {{--<!-- /Section: contact -->--}}
 
         <footer style="margin-left: 0; min-width: 990px ; padding: 0 0 0 0;" >
             <div class="container">

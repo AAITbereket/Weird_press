@@ -19,14 +19,13 @@ class materializeXController extends Controller
 
     }
 
-    public function temp_post(Request $request)
+    public function Ajax_edit_texts_And_links(Request $request)
     {
         // upload images
 
-        $Background_Image = $request->file('Background_Image');
+//        $Background_Image = $request->file('Background_Image');
 //        $name = $Background_Image->getClientOriginalName();
-
-        return response()->json(request()->all());
+//        return response()->json(request()->all());
 //        $profile_photo = $request->file('profile_photo');
 //        $Cv_doc = $request->file('Cv_doc');
 //
@@ -39,29 +38,25 @@ class materializeXController extends Controller
 //
 //        $Cv_doc->move($destination_Cv,$Cv_doc->getClientOriginalName());
 
-        $name_display =  ( isset($request->Name_display) ? $request->Name_display : null );
-//        $name_display = $request->Name_display;
+        $name_display = $request->Name_display;
+        $color_choice = $request->Color_choice;
         $subtitle = $request->subtitle;
         $my_story = $request->my_story;
-        $Full_Name = $request->Full_name;
         $Age = $request->Age;
         $Phone_No = $request->Phone_No;
         $Address = $request->Address;
         $facebook = $request->facebook;
-        $twitter = $request->twitter;
+        $twitter = $request->Twitter;
         $google = $request->google;
-        $Linkdein = $request->google;
-        $URL_to_access = $request->google;
+        $Linkdein = $request->Linkdein;
         $email = $request->email;
 
         $table = materializeX::where('Logged_user_email', 'hello@hell.com' )->get();
 
         if($table->count())
         {
-
-            $table[0]->User_Name_display = ( isset($name_display) ? $name_display : $table[0]->User_Name_display );
-
-//            $table[0]->User_Name_display = $name_display;
+            $table[0]->User_Name_display = $name_display;
+            $table[0]->Color_choice = $color_choice;
             $table[0]->Name_subtitle = $subtitle ;
             $table[0]->My_story = $my_story ;
             $table[0]->Age = $Age ;
@@ -72,13 +67,11 @@ class materializeXController extends Controller
             $table[0]->twitter = $twitter ;
             $table[0]->google = $google ;
             $table[0]->pinterest = $Linkdein;
-            $table[0]->URL_to_access = $URL_to_access;
             $table[0]->save();
-
             return response()->json($table);
         }
 
-        return response()->json(request()->all());
+//        return response()->json(request()->all());
 
     }
 

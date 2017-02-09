@@ -5,6 +5,20 @@
 
     <div class="" style="max-width: 990px;" id="main_display">
 
+        <?php
+
+        $User_Name_display = $lonely_main_table['User_Name_display'];
+        $Name_subtitle = $lonely_main_table['Name_subtitle'];
+        $Story_title = $lonely_main_table['Story_title'];
+        $My_story = $lonely_main_table['My_story'];
+        $Block_qoute = $lonely_main_table['Block_qoute'];
+        $Hobby_one = $lonely_main_table['Hobby_one'];
+        $Hobby_two = $lonely_main_table['Hobby_two'];
+        $Hobby_three = $lonely_main_table['Hobby_three'];
+        $Hobby_four = $lonely_main_table['Hobby_four'];
+        $Phone = $lonely_main_table['Phone'];
+
+        ?>
 
         <head>
             <meta charset="utf-8">
@@ -51,7 +65,7 @@
 
                 <div class="col-xs-4">
 
-                    Name :<input type="text" class="form-control" placeholder="Type Name to be displayed" name="Name">
+                    Name :<input type="text" class="form-control" value="{{$User_Name_display}}" placeholder="Type Name to be displayed" name="Name">
 
                 </div>
 
@@ -62,15 +76,15 @@
             <br/>
             <div class="row">
 
-                <div class="col-xs-4">
+                <div class="col-xs-6">
 
-                    Name subtitle : <textarea rows="1" name="name_subtitle"></textarea>
+                    Name subtitle : <textarea rows="2" style="min-width: 440px;"  name="name_subtitle" > {{$Name_subtitle}} </textarea>
 
                 </div>
 
-                <div class="col-xs-5">
+                <div class="col-xs-6">
 
-                    Story title : <textarea rows="1" name="story_stitle"></textarea>
+                    Story title : <textarea rows="2" style="min-width: 400px;"  name="story_stitle">{{$Story_title }}</textarea>
 
                 </div>
 
@@ -81,18 +95,17 @@
 
             <div class="row">
 
-                <div class="col-xs-4">
+                <div class="col-xs-6">
 
-                    My Story : <textarea rows="4" name="Main_story"></textarea>
+                    My Story : <textarea rows="4" name="Main_story" style="min-width: 440px;"> {{$My_story }} </textarea>
 
                 </div>
 
                 <div class="col-xs-5">
 
-                    Block Qoute : <textarea rows="1" name="block_qoute"></textarea>
+                    Block Qoute : <textarea rows="2" name="block_qoute" style="min-width: 400px;"> {{$Block_qoute }} </textarea>
 
                 </div>
-
 
             </div>
 
@@ -102,19 +115,19 @@
              <div class="row">
 
                  <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="Bachelor of design" name="Hobby_one">
+                     <input type="text" class="form-control" value="{{$Hobby_one}}" placeholder="{{$Hobby_one}}" name="Hobby_one">
                  </div>
 
                  <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="10x failed in love" name="Hobby_two">
+                     <input type="text" class="form-control" value="{{$Hobby_two}}" placeholder="{{$Hobby_two}}" name="Hobby_two">
                  </div>
 
                  <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="I love traveling" name="Hobby_three">
+                     <input type="text" class="form-control" value="{{$Hobby_three}}" placeholder="{{$Hobby_three}}" name="Hobby_three">
                  </div>
 
                  <div class="col-sm-3">
-                     <input type="text" class="form-control" placeholder="I'm photographer" name="Hobby_four">
+                     <input type="text" class="form-control" value="{{$Hobby_four}}" placeholder="{{$Hobby_four}}" name="Hobby_four">
                  </div>
 
              </div>
@@ -124,7 +137,7 @@
 
                 <div class="col-sm-4">
 
-                    <b> Phone No: </b><input type="text" class="form-control" placeholder="+0123456789" name="Name">
+                    <b> Phone No: </b><input type="text" class="form-control" value="{{$Phone}}" placeholder="+0123456789" name="Name">
 
                 </div>
 

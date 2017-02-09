@@ -7,6 +7,7 @@ use App\materializeX;
 use App\lonely_main_table;
 use Illuminate\Support\Facades\Auth;
 use Mail;
+use App\lonely_image_table;
 
 class HomeController extends Controller
 {
@@ -72,8 +73,16 @@ class HomeController extends Controller
             }
             elseif ($table_lonely->count())
             {
+                $lonely_gallery = lonely_image_table::where('Logged_user_email', $email )->get();
+
+                if(! $lonely_gallery->count())
+                {
+                    $lonely_gallery = lonely_image_table::where('Logged_user_email', 'example@example.com' )->get();
+                }
+
                 $lonely_main_table = $table_lonely[0];
-                return view('admin_panel_template_view.lonely_admin', compact('lonely_main_table'));
+                return view('admin_panel_template_view.lonely_admin', compact('lonely_main_table','lonely_gallery'));
+
             }
 
             else
@@ -160,6 +169,40 @@ class HomeController extends Controller
         });
         echo "Basic Email Sent. Check your inbox.";
     }
+
+    public function editImage()
+    {
+
+        if (! Auth::check())
+        {
+            return redirect('login');
+        }
+
+        else{
+
+            $email = Auth::user()->email;
+            $table_material = materializeX::where('Logged_user_email', $email )->get();
+            $table_lonely = lonely_main_table::where('Logged_user_email', $email )->get();
+
+            if($table_material->count())
+            {
+                return view('edit_materializeX.material_image_edit');
+            }
+            elseif ($table_lonely->count())
+            {
+                return view('edit_lonely.lonely_image_edit');
+            }
+
+            else
+            {
+                return redirect('template_choose');
+            }
+
+        }
+
+    }
+
+
 }
 
 

@@ -89,17 +89,16 @@
                 <div class="menu_section">
                   <h3>Page Admin</h3>
                   <ul class="nav side-menu">
-                    <li><a href="admin_panel"><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="#"> Preview </a></li>
+                        <li><a href="admin_panel"> Preview </a></li>
                       </ul>
                     </li>
-                    <li><a href="edit_template"><i class="fa fa-edit"></i> Edit template <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fa fa-edit"></i> Edit template <span class="fa fa-chevron-down"></span></a>
                       <ul class="nav child_menu">
-                        <li><a href="#">Edit Name </a></li>
-                        <li><a href="#">Edit My story </a></li>
-                        <li><a href="#">Edit Personal Info.</a></li>
-                        <li><a href="#">Edit Images </a></li>
+                        <li><a href="edit_template">Edit Personal Info.</a></li>
+                        <li><a href="edit_template">Edit My story </a></li>
+                        <li><a href="edit_Images">Edit Images </a></li>
                       </ul>
                     </li>
                       <ul class="nav child_menu">

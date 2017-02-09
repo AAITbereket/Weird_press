@@ -36,12 +36,16 @@ Route::get('DropPage' , 'HomeController@dropPage' );
 // ### Edit template
 Route::get('edit_template' , 'HomeController@editTemplate' );
 
-// ### Download Cv 
-
+// ### Download Cv
 Route::get('downloadCV' , 'materializeXController@downloadCV' );
 
 // ## check mail send 
 Route::get('sendMail' , 'HomeController@sendMail' ); // not working
+
+// ## edit template Images 
+Route::get('edit_Images' , 'HomeController@editImage' );
+
+
 
 Route::get('edit_Image' , function(){
     return view('edit_materializeX.material_image_edit');
@@ -77,7 +81,7 @@ Route::get('X_edit' , function(){
 
 Route::get('temp', 'materializeXController@temp');
 
-Route::post('X_edit', 'materializeXController@temp_post');
+Route::post('edit_texts_And_Links', 'materializeXController@Ajax_edit_texts_And_links');
 //Route::get('temp', 'lonelyController@lonely_load_from_DB');
 
 //Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
