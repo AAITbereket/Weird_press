@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login</title>
-<!-- For-Mobile-Apps -->
+<title>Login </title>
+{{--<!-- For-Mobile-Apps -->--}}
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //For-Mobile-Apps -->
-	<link rel="shortcut icon" type="image/png" href="/_Login/img/favicon.png" />
-<!-- Style --> <link rel="stylesheet" href="/_Login/css/style.css" type="text/css" media="all" />
+{{--<!-- //For-Mobile-Apps -->--}}
+	<link rel="shortcut icon" href="/Admin_panel_/img/favicon.png" >
+{{--<!-- Style --> --}}
+	<link rel="stylesheet" href="/_Login/css/style.css" type="text/css" media="all" />
+
+	<style>
+		html, body {
+			background-color: #2A3F54;
+			color: #ECF0F1;
+			font-family: 'Raleway', sans-serif;
+			font-weight: 100;
+			height: 100vh;
+			margin: 0;
+		}
+
+		.top-right {
+			position: absolute;
+			right: 10px;
+			top: 18px;
+		}
+
+		.links > a {
+			color: #ECF0F1;
+			padding: 0 25px;
+			font-size: 15px;
+			font-weight: 600;
+			letter-spacing: .1rem;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	</style>
 
 </head>
 <body>
 <div class="container">
 <br/>
 
-<br/> <br/>
-<br/>
+	<div style="margin: auto auto; text-align: center;">
+		<img src="/Admin_panel_/img/favicon.png" style="max-height: 153px;" >
+	</div>
+
+
 	<div class="signin" class="col-sm-4">
      	{{--<form method="post" action="login_request">--}}
 	      	{{--<input id="check" type="text" name="UserName" class="user"  required />--}}
@@ -26,13 +57,15 @@
           	{{--<input type="submit" value="Login" />--}}
 	 	{{--</form>--}}
 
+		<div class="top-right links">
+			<a href="{{ url('/') }}">Home</a>
+		</div>
 
 		<form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
 			{{ csrf_field() }}
 
 			<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 				<label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
 				<div class="col-md-6">
 					<input id="email" type="email" class="user" name="email" value="{{ old('email') }}" required autofocus>
 

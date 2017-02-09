@@ -16,6 +16,8 @@
     <!-- Custom Theme Style -->
     <link href="/Admin_panel_/css/custom.css" rel="stylesheet">
 
+    <link rel="shortcut icon" href="/Admin_panel_/img/favicon.png" >
+
   </head>
 
   <body class="nav-md">

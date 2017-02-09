@@ -19,23 +19,52 @@
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+
+
+    <style>
+        html, body {
+            background-color: #2A3F54;
+            color: #ECF0F1;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .links > a {
+            color: #ECF0F1;
+            padding: 0 25px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    </style>
+
 </head>
-<body style="background-image: url('/_Login/img/bg.jpg');">
+<body >
+
+<div class="top-right links" >
+    <a href="{{ url('/login') }}" > Login </a>
+    <a href="{{ url('/') }}" > Home </a>
+</div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <br/><br/>
 
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-3" >
-                    <a href="{{ url('/login') }}" style="color: #ff864c; float: right;"> Login </a>
-            </div>
+    <div style="margin: auto auto; text-align: center; padding-top: 75px;">
+        <img src="/Admin_panel_/img/favicon.png" style="max-height: 153px;" >
+    </div>
+
+    <div class="row" style="margin-top: -65px;">
+        <div class="col-md-8 col-md-offset-2">
+
             <br/>
             <div class="signin">
                 <div class="panel-heading"> <h3 style="color:white;"> Register </h3></div>
