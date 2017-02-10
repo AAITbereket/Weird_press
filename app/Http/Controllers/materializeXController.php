@@ -116,13 +116,59 @@ class materializeXController extends Controller
 
     public function downloadCV()
     {
-        $file= public_path(). "/materializeX/Cv_uploads/Flash.pdf";
+        $email = Auth::user()->email;
 
+        $table = materializeX::where('Logged_user_email', $email )->get();
+        
+        $file_name = $table[0]->Cv_document;
+        
+        $file= public_path(). "/materializeX/Cv_uploads/". $file_name;
+        
         $headers = array(
             'Content-Type: application/pdf',
         );
 
-        return response()->download($file, 'filename.pdf', $headers);
+        return response()->download($file, $file_name , $headers);
     }
 
+    public function upload_images(Request $request )
+    {
+        $email = Auth::user()->email;
+
+        $table = materializeX::where('Logged_user_email', $email )->get();
+
+        if($table->count())
+        {
+
+            $Cv_doc = $request->file('Cv_doc');
+            $Background_Image = $request->file('Background_Image');
+            $profile_photo = $request->file('profile_photo');
+
+            if( isset( $Cv_doc)) {
+
+                $Cv_doc_name = $Cv_doc->getClientOriginalName();
+                $Cv_doc->move(public_path('/materializeX/Cv_uploads'), $Cv_doc_name);
+                $table[0]->Cv_document = $Cv_doc_name;
+            }
+
+            if( isset( $Background_Image)) {
+                $Background_Image_name = $Background_Image->getClientOriginalName();
+                $Background_Image->move(public_path('/materializeX/images/uploads'), $Background_Image_name);
+                $table[0]->Background_image = '/materializeX/images/uploads/' . $Background_Image_name;
+            }
+
+            if( isset( $profile_photo)) {
+                $profile_photo_name = $profile_photo->getClientOriginalName();
+                $profile_photo->move(public_path('/materializeX/images/uploads'), $profile_photo_name);
+                $table[0]->Photo_image = '/materializeX/images/uploads/' . $profile_photo_name;
+            }
+
+            $table[0]->save();
+            return redirect('edit_Images')->with('message', 'File uploaded successfully');
+        }
+        else{
+            return redirect("/");
+        }
+    }
+    
 }

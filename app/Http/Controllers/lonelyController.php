@@ -107,4 +107,58 @@ class lonelyController extends Controller
 
     }
 
+    public function upload_images_lonely(Request $request )
+    {
+        $email = Auth::user()->email;
+
+        $table = lonely_main_table::where('Logged_user_email', $email )->get();
+
+        if($table->count())
+        {
+            
+            $Bg_image = $request->file('Bg_image');
+            $My_Story_left_image = $request->file('My_Story_left_image');
+            $gallery_photos = $request->file('images');
+
+            if( isset( $Bg_image)) {
+
+                $Bg_image_name = $Bg_image->getClientOriginalName();
+                $Bg_image->move(public_path('/lonely/img/uploads/'), $Bg_image_name);
+                $table[0]->Background_image = '/lonely/img/uploads/'. $Bg_image_name;
+            }
+
+            if( isset( $My_Story_left_image)) {
+                $My_Story_left_image_name = $My_Story_left_image->getClientOriginalName();
+                $My_Story_left_image->move(public_path('/lonely/img/uploads/'), $My_Story_left_image_name);
+                $table[0]->Story_leftSide_image = '/lonely/img/uploads/' . $My_Story_left_image_name;
+            }
+
+//            $check = count($gallery_photos);
+
+            if( isset( $gallery_photos)) {
+
+                foreach($gallery_photos as $gallery_photo) {
+
+                    $gallery_photo_name = $gallery_photo->getClientOriginalName();
+                    $gallery_photo->move(public_path('/lonely/img/uploads/gallery/'), $gallery_photo_name);
+
+                    $new_row = new lonely_image_table;
+                    $new_row->Logged_user_email = $email;
+                    $new_row->Photo_URL = '/lonely/img/uploads/gallery/' . $gallery_photo_name;
+                    $new_row->save();
+
+                }
+                      return json_encode(lonely_image_table::all());
+//                    return redirect('edit_Images');
+            }
+            $table[0]->save();
+            return json_encode($table);
+            return redirect('edit_Images');
+        }
+        else{
+            return redirect("/");
+        }
+    }
+
+
 }

@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin_panel_DIR.admin_panel_view');
+        return view('/welcome');
     }
     
     public function accessMyPage($email)
@@ -103,7 +103,6 @@ class HomeController extends Controller
         }
 
     }
-
 
     public function dropPage()
     {
@@ -196,11 +195,25 @@ class HomeController extends Controller
 
             if($table_material->count())
             {
-                return view('edit_materializeX.material_image_edit');
+                $profile_photo = $table_material[0]->Photo_image;
+                $Background_image = $table_material[0]->Background_image;
+                $Cv = $table_material[0]->Cv_document;
+                return view('edit_materializeX.material_image_edit',compact('profile_photo', 'Background_image', 'Cv'));
             }
             elseif ($table_lonely->count())
             {
-                return view('edit_lonely.lonely_image_edit');
+
+                $lonely_gallery = lonely_image_table::where('Logged_user_email', $email )->get();
+
+                if(! $lonely_gallery->count())
+                {
+                    $lonely_gallery = lonely_image_table::where('Logged_user_email', 'example@example.com' )->get();
+                }
+
+                $lonely_main_table = $table_lonely[0];
+
+                return view('edit_lonely.lonely_image_edit', compact('lonely_main_table','lonely_gallery'));
+
             }
 
             else
