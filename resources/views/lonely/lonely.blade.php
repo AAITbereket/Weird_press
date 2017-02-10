@@ -212,7 +212,7 @@
                     <div id="owl-works" class="owl-carousel">
 
                         @foreach($Photo_gallery as $photo)
-                            <div class="item"><a href="{{$photo['Photo_URL']}}" title="This is an image title" data-lightbox-gallery="gallery1"><img src="{{$photo['Photo_URL']}}" class="img-responsive" alt="img"></a></div>
+                            <div class="item"><a href="{{$photo['Photo_URL']}}" title="This is an image title" data-lightbox-gallery="gallery1"><img src="{{$photo['Photo_URL']}}" class="img-responsive" alt="img" title="{{ substr( $photo['Photo_URL'], 20)}}"></a></div>
                         @endforeach
 
                     </div>

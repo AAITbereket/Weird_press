@@ -58,21 +58,6 @@ class lonelyController extends Controller
 
     public function Ajax_edit_texts_And_links(Request $request)
     {
-        // upload images
-//        $Background_Image = $request->file('Background_Image');
-//        $name = $Background_Image->getClientOriginalName();
-//        return response()->json(request()->all());
-//        $profile_photo = $request->file('profile_photo');
-//        $Cv_doc = $request->file('Cv_doc');
-//
-//        $destination_images = 'materializeX/images/uploads';
-//        $destination_Cv = 'materializeX/Cv_uploads';
-//
-//        $Background_Image->move($destination_images,$Background_Image->getClientOriginalName());
-//
-//        $profile_photo->move($destination_images,$profile_photo->getClientOriginalName());
-//
-//        $Cv_doc->move($destination_Cv,$Cv_doc->getClientOriginalName());
 
         $name = $request->Name;
         $name_subtitle = $request->name_subtitle;
@@ -148,8 +133,8 @@ class lonelyController extends Controller
                     $new_row->save();
 
                 }
-                      return json_encode(lonely_image_table::all());
-//                    return redirect('edit_Images');
+//                      return json_encode(lonely_image_table::all());
+                    return redirect('edit_Images');
             }
             $table[0]->save();
             return json_encode($table);
@@ -160,5 +145,14 @@ class lonelyController extends Controller
         }
     }
 
+    public function delete_images_lonely(Request $request)
+    {
+        $email = Auth::user()->email;
 
+        $photo_2_delete = $request->photo;
+
+        $row_to_delete = lonely_image_table::where('Logged_user_email', "$email")->where('Photo_URL', "$photo_2_delete")->delete();
+
+        return response(json_encode($row_to_delete));
+    }
 }

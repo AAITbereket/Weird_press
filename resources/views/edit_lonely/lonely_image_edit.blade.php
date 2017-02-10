@@ -89,17 +89,23 @@
 
                         <h4> Delete Uploaded Photo  </h4>
 
-                        <form method="POST" id="deleteImage" >
+                        <form method="POST" class="ajax" id="deleteImage" action="/delete_images_lonely" >
+
+                            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
                             <select name="photo" class="dropdown-toggle col-md-6" data-style="btn-primary" >
                                   @foreach($lonely_gallery as $photo)
-                                        <option value="color5"> {{$photo['Photo_URL']}} </option>
+                                        <option value="{{$photo['Photo_URL']}}"> {{ substr( $photo['Photo_URL'], 20)}} </option>
                                    @endforeach
                             </select>
                             <div class="col-md-4">
 
                                 <button type="submit" class="btn btn-warning"> Delete </button>
 
+                            </div>
+                            <div class="alert alert-success alert-dismissable col-md-3" style="display: none" id="sucess_msg">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong>Success!</strong> Successfully submitted
                             </div>
                         </form>
                     </div>
@@ -131,6 +137,36 @@
             $("#leftCol").css('height',Main_div_height);
             $("#leftCol").css('position','fixed');
         </script>
+
+        <script>
+            // $("table").stupidtable();
+            $(document).ready(function() {
+
+
+                // Ajax for our form
+                $('form.ajax').submit(function(e){
+                    e.preventDefault();
+
+                    var registerForm = $("#deleteImage");
+                    var formData = registerForm.serialize();
+
+                    $.ajax({
+                        type     : "POST",
+                        url      : '/delete_images_lonely',
+                        data     : formData,
+                        success  : function(data) {
+                            console.log(data);
+//                            alert('success');
+                            $('#sucess_msg').css('display', 'block');
+                            window.location.reload();
+                        }
+                    });
+                });
+
+            });
+        </script>
+
+
 
         </body>
     </div>

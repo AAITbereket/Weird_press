@@ -57,6 +57,10 @@ Route::post('upload_images_material', 'materializeXController@upload_images');
 // ## lonely template upload images
 Route::post('upload_images_lonely', 'lonelyController@upload_images_lonely');
 
+// ## Delete image from lonely 
+Route::post('delete_images_lonely', 'lonelyController@delete_images_lonely');
+
+
 Route::get('edit_Image' , function(){
     return view('edit_materializeX.material_image_edit');
 });
