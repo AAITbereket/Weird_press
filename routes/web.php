@@ -51,7 +51,11 @@ Route::post('edit_texts_And_Links', 'materializeXController@Ajax_edit_texts_And_
 // ## lonely template edit texts and links
 Route::post('lonely_edit_texts_And_Links', 'lonelyController@Ajax_edit_texts_And_links');
 
+// ## material template upload images 
+Route::post('upload_images_material', 'materializeXController@upload_images');
 
+// ## lonely template upload images
+Route::post('upload_images_lonely', 'lonelyController@upload_images_lonely');
 
 Route::get('edit_Image' , function(){
     return view('edit_materializeX.material_image_edit');
@@ -113,4 +117,4 @@ Route::get('register_custom' , function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@showAdminPanel');
+Route::get('/home', 'HomeController@index');

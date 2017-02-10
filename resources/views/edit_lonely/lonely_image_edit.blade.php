@@ -47,56 +47,65 @@
 
             <h3> Lonely template edit Images </h3>
 
-            <div class="row">
+        <form method="POST" enctype="multipart/form-data" action="/upload_images_lonely">
 
-                <div class="col-xs-4">
+            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
-                    Change Background Image : <input type="file" name="Bg_image">
+                <div class="row">
 
-                </div>
+                    <div class="col-xs-4">
 
-                <div class="col-xs-4">
-
-                    My story left side image : <input type="file" name="My_Story_left_image">
-
-                </div>
-
-            </div>
-
-            <br/><hr/>
-
-            <h4 style="margin:60px 0 30px;"> Edit Photos in Gallery  </h4>
-
-            <div class="row">
-
-                <div class="col-xs-5">
-
-                    Upload photos : <input type="file" name="gallery_photo">
-
-                </div>
-
-                <div class="col-md-5">
-
-                    <h4> Delete Uploaded Photo  </h4>
-
-                    <select name="photo" class="dropdown-toggle col-md-6" data-style="btn-primary" >
-
-                        {{--<option value="Photo{{" ".$id_photo}}">Photo {{" ".$id_photo}}</option>--}}
-
-                    </select>
-                    <div class="col-md-4">
-
-                        <button class="btn btn-warning"> Delete </button>
+                        Change Background Image : <input type="file" name="Bg_image">
 
                     </div>
 
+                    <div class="col-xs-4">
+
+                        My story left side image : <input type="file" name="My_Story_left_image">
+
+                    </div>
 
                 </div>
 
-            </div>
+                <br/><hr/>
 
-            <br/><hr/>
-            <button class="btn btn-primary"> Submit </button>
+                <h4 style="margin:60px 0 30px;"> Edit Photos in Gallery  </h4>
+
+                <div class="row">
+
+                        <div class="col-xs-5">
+
+                            Upload photos : <input type="file" name="images[]" multiple>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-primary"> Submit </button>
+                        </div>
+
+                    </div>
+        </form>
+            <br/><hr/><br/><br/>
+            <div class="row">
+                    <div class="col-md-5">
+
+                        <h4> Delete Uploaded Photo  </h4>
+
+                        <form method="POST" id="deleteImage" >
+
+                            <select name="photo" class="dropdown-toggle col-md-6" data-style="btn-primary" >
+                                  @foreach($lonely_gallery as $photo)
+                                        <option value="color5"> {{$photo['Photo_URL']}} </option>
+                                   @endforeach
+                            </select>
+                            <div class="col-md-4">
+
+                                <button type="submit" class="btn btn-warning"> Delete </button>
+
+                            </div>
+                        </form>
+                    </div>
+            </div>
+                {{--</div>--}}
+
 
         </div>
 

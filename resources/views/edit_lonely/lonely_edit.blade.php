@@ -146,9 +146,17 @@
 
             </div>
             <br>
-            <div class="col-sm-7" >
-                <button type="submit" style="float: right;" class="btn btn-primary btn-md"> Submit </button>
-            </div>
+
+                <div class="col-sm-4" >
+                    <button type="submit" style="float: right;" class="btn btn-primary btn-md"> Submit </button>
+                </div>
+
+                <div class="alert alert-success alert-dismissable col-sm-3" style="display: none" id="sucess_msg">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong> Successfully submitted
+                </div>
+
+
             <br/><br/><hr/>
         </form>
         </div>
@@ -166,6 +174,7 @@
         <script src="/lonely/js/nivo-lightbox.min.js"></script>
         <!-- Custom Theme JavaScript -->
         <script src="/lonely/js/custom.js"></script>
+        <script src="/edit_materialx/js/materialize.js"></script>
 
 
         <script>
@@ -194,6 +203,8 @@
                         data     : formData,
                         success  : function(data) {
                             console.log(data);
+//                            alert('success');
+                            $('#sucess_msg').css('display', 'block');
                         }
                     });
                 });

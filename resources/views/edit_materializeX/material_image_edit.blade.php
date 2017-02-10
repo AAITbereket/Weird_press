@@ -81,7 +81,7 @@
                 <h5 >Materialize Edit images </h5>
 
 
-                <form method="POST" class="ajax" enctype="multipart/form-data" id = 'material_upload_images'>
+                <form method="POST" action="/upload_images_material" enctype="multipart/form-data" id = 'material_upload_images'>
 
                     <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
@@ -93,12 +93,13 @@
 
                             <div>
 
-                                <h3> Background Image Change</h3>
+                                <h3> Background Image </h3>
+                                <img src="{{$Background_image}}" style="max-height: 168px;">
                                 <br/>
                                 <input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="Background_Image"/>
                                 <br/><br/>
                                 <h3> Profile photo upload</h3>
-                                <img src="/edit_materialx/img/person.png" style="max-height: 168px;">
+                                <img src="{{$profile_photo}}" style="max-height: 168px;">
 
                                 <br/>
                                 <input class="waves-effect waves-teal btn-flat" type="file" accept="image/*" name="profile_photo"/>
@@ -113,6 +114,8 @@
                         <div class="col s5 offset-s1">
 
                             <h2> Upload your CV  </h2>
+                            <br/>
+                            <label> Curren resume file is {{$Cv}} </label>
                             <br/>
                             <div class="input-field col s5">
                                 <input class="waves-effect waves-teal btn-flat" type="file" accept=".pdf,.doc,.docx,.RTF,.TXT" name="Cv_doc"/>

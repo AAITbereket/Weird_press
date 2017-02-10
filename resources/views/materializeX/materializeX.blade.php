@@ -133,7 +133,7 @@
               <div class="person-about">
                 <h3 class="about-subtitle">My Story</h3>
                 <p>{{$My_story}}</p>
-                <a href="downloadCV" class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Download Resume</a>
+                <a href="/downloadCV" class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Download Resume</a>
               </div>
             </div>
             <!-- about me description -->

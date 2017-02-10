@@ -78,7 +78,7 @@
         <section id="intro" class="intro">
 
             <div class="slogan">
-                <a href="index.html"><img src="/lonely/img/logo.png" alt="" /></a>
+                <a ><img src="/lonely/img/logo.png" alt="" /></a>
             </div>
             <div class="page-scroll">
                 <a href="#about">

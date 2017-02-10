@@ -229,23 +229,25 @@
 			</div>
 
 
-
 		</main>
 		<!-- Main Container end-->
 
 
 		<!-- JavaScripts -->
 		<script src="/materializeX/js/jquery.min.js"></script>
+
 		<script src="/materializeX/js/jquery.easing.1.3.js"></script>
 		<script src="/materializeX/js/detectmobilebrowser.js"></script>
 
 		<script src="/materializeX/js/owl.carousel.min.js"></script>
 		<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>
 		<script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
+		{{--<script src="/materializeX/libs/materialize/js/materialize.js"></script>--}}
 		<script src="/materializeX/js/sweet-alert.min.js"></script>
 		{{--<script src="/materializeX/js/common.js"></script>--}}
 		<script src="/materializeX/js/main.js"></script>
 
+		<script src="/edit_materialx/js/materialize.js"></script>
 
 		</body>
 
@@ -275,6 +277,7 @@
 						data     : formData,
 						success  : function(data) {
 							console.log(data);
+							Materialize.toast('Successfully published', 4000, 'blue darken-4');
 						}
 					});
 				});
