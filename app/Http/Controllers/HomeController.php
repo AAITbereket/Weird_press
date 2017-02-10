@@ -31,10 +31,10 @@ class HomeController extends Controller
         return view('/welcome');
     }
     
-    public function accessMyPage($email)
+    public function accessMyPage($email_url)
     {
-        $table_material = materializeX::where('Logged_user_email', $email )->get();
-        $table_lonely = lonely_main_table::where('Logged_user_email', $email )->get();
+        $table_material = materializeX::where('Logged_user_email', $email_url )->get();
+        $table_lonely = lonely_main_table::where('Logged_user_email', $email_url )->get();
 
         if($table_material->count())
         {
@@ -43,7 +43,7 @@ class HomeController extends Controller
         }
         elseif ($table_lonely->count())
         {
-            $lonely_gallery = lonely_image_table::where('Logged_user_email', $email )->get();
+            $lonely_gallery = lonely_image_table::where('Logged_user_email', $email_url )->get();
 
             if(! $lonely_gallery->count())
             {
@@ -57,7 +57,7 @@ class HomeController extends Controller
         else
         {
 
-            echo "Manhe plz go back and create user account first ".$email;
+            echo "Manhe plz go back and create user account first ".$email_url;
 
         }
     }

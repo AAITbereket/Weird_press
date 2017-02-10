@@ -121,15 +121,20 @@ class materializeXController extends Controller
         $table = materializeX::where('Logged_user_email', $email )->get();
         
         $file_name = $table[0]->Cv_document;
-        
-        $file= public_path(). "/materializeX/Cv_uploads/". $file_name;
-        
-        $headers = array(
-            'Content-Type: application/pdf',
-        );
 
-        return response()->download($file, $file_name , $headers);
-    }
+        $file = public_path() . "/materializeX/Cv_uploads/" . $file_name;
+
+            if (file_exists($file)) {
+                $headers = array(
+                    'Content-Type: application/pdf',
+                );
+
+                return response()->download($file, $file_name, $headers);
+            }
+            else{
+                return redirect('/edit_Images');
+            }
+        }
 
     public function upload_images(Request $request )
     {

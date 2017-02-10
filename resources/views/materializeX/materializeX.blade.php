@@ -297,7 +297,7 @@
 
   <!-- JavaScripts -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="/materializeX/js/jquery-1.11.1.min.js"></script>
+  <script src="/materializeX/js/jquery.min.js"></script>
   <script src="/materializeX/js/jquery.easing.1.3.js"></script>
   <script src="/materializeX/js/detectmobilebrowser.js"></script>
   <script src="/materializeX/js/isotope.pkgd.min.js"></script>
@@ -305,14 +305,26 @@
   <script src="/materializeX/js/waypoints.js"></script>
   <script src="/materializeX/js/jquery.counterup.min.js"></script>
   <script src="/materializeX/js/jquery.nicescroll.min.js"></script>
-  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+  {{--<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>--}}
+  <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC-6hD94U6sPe1Szb1Zr7PIlUJQk6k5sMM "></script>
   <script src="/materializeX/js/gmaps.js"></script>
   <script src="/materializeX/js/owl.carousel.min.js"></script>
   {{--<script src="assets/libs/owl-carousel/owl.carousel.min.js"></script>--}}
   <script src="/materializeX/libs/materialize/js/materialize.min.js"></script>
+  <script src="/materializeX/js/jwplayer.js"></script>
   <script src="/materializeX/js/sweet-alert.min.js"></script>
   <script src="/materializeX/js/common.js"></script>
   <script src="/materializeX/js/main.js"></script>
+
+
+  <script>
+    /* Map Object */
+    {{--var mapObj = new GMaps({--}}
+      {{--el: '#map',--}}
+      {{--lat: 48.857,--}}
+      {{--lng: 2.295--}}
+    {{--});--}}
+  {{--</script>--}}
 
 
 </body>

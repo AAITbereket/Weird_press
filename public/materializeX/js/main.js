@@ -550,9 +550,21 @@ $(document).ready(function($){
 			lng : 90.41430473327637,
 			scrollwheel: false,
 			draggable: draggableOp,
-			zoom: 16,
+			zoom: 11,
 			disableDefaultUI: true,
 			styles : mapStyle
+		});
+/// Added by me
+		GMaps.geolocate({
+			success: function(position) {
+				map.setCenter(position.coords.latitude, position.coords.longitude);
+			},
+			error: function(error) {
+				alert('Geolocation failed: '+error.message);
+			},
+			not_supported: function() {
+				alert("Your browser does not support geolocation");
+			}
 		});
 
 		map.addMarker({

@@ -18,7 +18,7 @@ Route::get('lonely_preivew' , 'lonelyController@show_preview' );
 // ####### end of preview block
 
 // ###### URL Access My page / my email
-Route::get('MyPage/{email}' , 'HomeController@accessMyPage' );
+Route::get('MyPage/{email_url}' , 'guestController@accessMyPage' );
 // ###### endo of access mypage / myemail
 
 // ##### after login or registration
