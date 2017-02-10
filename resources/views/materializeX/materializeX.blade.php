@@ -219,12 +219,17 @@
                   <div class="col-sm-5">
                     <div class="clearfix card-panel grey lighten-5 cform-wrapper">
                       <form action="#" id="contactForm" novalidate>
+
+                        <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
+
+                        <input type="hidden" name="recipent" value="{{$email}}">
+
                         <div class="input-field">
-                          <input id="contact_name" type="text" name="contactName" class="validate input-box">
+                          <input id="contact_name" type="text" name="contactName" class="validate input-box" required>
                           <label for="contact_name" class="input-label">Name</label>
                         </div>
                         <div class="input-field">
-                          <input id="email" type="email" name="contactEmail" class="validate input-box">
+                          <input id="email" type="email" name="contactEmail" class="validate input-box" required>
                           <label for="email" class="input-label">Email</label>
                         </div>
                         <div class="input-field">
@@ -232,7 +237,7 @@
                           <label for="subject" class="input-label">Subject</label>
                         </div>
                         <div class="input-field textarea-input">
-                          <textarea id="textarea1" name="contactMessage" class="validate materialize-textarea" style="height: 22px;"></textarea>
+                          <textarea id="textarea1" name="contactMessage" class="validate materialize-textarea" style="height: 22px;" required></textarea>
                           <label for="textarea1" class="input-label">Message</label>
                         </div>
                         <div class="input-field submit-wrap clearfix">

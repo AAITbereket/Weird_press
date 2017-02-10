@@ -36,8 +36,67 @@ class guestController extends Controller
         else
         {
 
-            echo "Manhe plz go back and create user account first ".$email_url;
+            return view('emailNotTaken');       
+//            echo "Manhe plz go back and create user account first ".$email_url;
 
         }
     }
+
+    public function sendMail(Request $request)
+    {
+
+        // Replace this with your own email address
+//        $siteOwnersEmail = $request->recipent;
+        $siteOwnersEmail = 'bereketgebredingle@gmail.com';
+
+        if($_POST) {
+
+            $name = $request->contactName;
+            $email = $request->contactEmail;
+            $subject = $request->contactSubject;
+            $contact_message = $request->contactMessage;
+            $error = array();
+
+            // Set Message
+            $message = "Email from: " . $name . "<br />";
+            $message .= "Email address: " . $email . "<br />";
+            $message .= "Message: <br />";
+            $message .= $contact_message;
+            $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
+
+            // Set From: header
+            $from =  $name . " <" . $email . ">";
+
+            // Email Headers
+            $headers = "From: " . $from . "\r\n";
+            $headers .= "Reply-To: ". $email . "\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+
+            if ( empty($error) ) {
+
+                ini_set("sendmail_from", $siteOwnersEmail); // for windows server
+                $mail = mail($siteOwnersEmail, $subject, $message, $headers);
+
+                if ($mail) {
+                    $error['OK'] = "done";
+                    return response(json_encode($error));
+                } else {
+                    $error['sending'] = "Something went wrong. Please try again.";
+                    return response(json_encode($error));
+                }
+
+            } # end if - no validation error
+
+            else {
+
+                return response(json_encode($error));
+
+            } # end else - there was a validation error
+
+        }
+
+    }
+
 }

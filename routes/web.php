@@ -40,7 +40,7 @@ Route::get('edit_template' , 'HomeController@editTemplate' );
 Route::get('downloadCV' , 'materializeXController@downloadCV' );
 
 // ## check mail send 
-Route::get('sendMail' , 'HomeController@sendMail' ); // not working
+Route::post('sendMail' , 'guestController@sendMail' ); // 
 
 // ## edit template Images 
 Route::get('edit_Images' , 'HomeController@editImage' );
@@ -59,6 +59,12 @@ Route::post('upload_images_lonely', 'lonelyController@upload_images_lonely');
 
 // ## Delete image from lonely 
 Route::post('delete_images_lonely', 'lonelyController@delete_images_lonely');
+
+// trying email
+Route::get('sendEmail' , 'HomeController@sendMail' ); // 
+
+// emailNotTaken 
+
 
 
 Route::get('edit_Image' , function(){

@@ -765,7 +765,7 @@ $('#contactForm').on('submit', function(e){
 
 	$.ajax({
 		type: "POST",
-		url: "inc/sendEmail.php",
+		url: "/sendMail",
 		data: data
 	}).done(function(res){
 
