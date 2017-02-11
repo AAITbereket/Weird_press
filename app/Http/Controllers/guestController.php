@@ -38,6 +38,6 @@ class guestController extends Controller
             return view('emailNotTaken');
         }
     }
-    
+
 
 }
