@@ -71,8 +71,9 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-
+//    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+// Editted By me 
+    'encryption' => env('MAIL_ENCRYPTION', ''),
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username

@@ -97,7 +97,7 @@ class HomeController extends Controller
 
             else
             {
-                return redirect('template_choose');
+                return view('template_choose.choose');
             }
 
         }
@@ -166,18 +166,6 @@ class HomeController extends Controller
             }
 
         }
-
-    public function sendMail()
-    {
-        $data = array('name'=>"Virat Gandhi");
-
-        Mail::send(['text'=>'mail'], $data, function($message) {
-            $message->to('bereketgebredingle@gmail.com', 'Tutorials Point')->subject
-            ('Laravel Basic Testing Mail');
-            $message->from('xyz@gmail.com','Virat Gandhi');
-        });
-        echo "Basic Email Sent. Check your inbox.";
-    }
 
     public function editImage()
     {

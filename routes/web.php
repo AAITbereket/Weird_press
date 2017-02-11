@@ -60,12 +60,6 @@ Route::post('upload_images_lonely', 'lonelyController@upload_images_lonely');
 // ## Delete image from lonely 
 Route::post('delete_images_lonely', 'lonelyController@delete_images_lonely');
 
-// trying email
-Route::get('sendEmail' , 'HomeController@sendMail' ); // 
-
-// emailNotTaken 
-
-
 
 Route::get('edit_Image' , function(){
     return view('edit_materializeX.material_image_edit');
@@ -101,10 +95,6 @@ Route::get('X_edit' , function(){
 
 Route::get('temp', 'materializeXController@temp');
 
-//Route::get('temp', 'lonelyController@lonely_load_from_DB');
-
-//Route::get('materializeX', 'materializeXController@materializeX_load_from_DB');
-
 Route::get('materializeX_view', 'materializeXController@materializeX_load_from_DB');
 
 Route::get('materializeX_check' , function(){
@@ -113,17 +103,10 @@ Route::get('materializeX_check' , function(){
 
 Route::get('lonely_view' , 'lonelyController@lonely_load_from_DB');
 
-//Route::get('materializeX' , function(){
-//    return view('materializeX.materializeX');
-//});
 
 Route::get('register_custom' , function(){
     return view('Register.register_custom');
 });
-
-//Route::post('login_request', 'userLoginController@doLogin');
-
-//Route::post('login_request', 'userLoginController@registerMe');
 
 Auth::routes();
 
