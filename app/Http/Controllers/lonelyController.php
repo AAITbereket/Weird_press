@@ -134,11 +134,10 @@ class lonelyController extends Controller
 
                 }
 //                      return json_encode(lonely_image_table::all());
-                    return redirect('edit_Images');
+                    return redirect('/admin_panel');
             }
             $table[0]->save();
-            return json_encode($table);
-            return redirect('edit_Images');
+            return redirect('/admin_panel');
         }
         else{
             return redirect("/");

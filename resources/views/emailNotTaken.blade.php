@@ -75,16 +75,16 @@
             <br/><br/>
         </div>
     </div>
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @if (Auth::check())
-                <a href="{{ url('/admin_panel') }}">Home</a>
-            @else
-                <a href="{{ url('/login') }}">Login</a>
-                <a href="{{ url('/register_custom') }}">Register</a>
-            @endif
-        </div>
-    @endif
+    {{--@if (Route::has('login'))--}}
+        {{--<div class="top-right links">--}}
+            {{--@if (Auth::check())--}}
+                {{--<a href="{{ url('/admin_panel') }}">Home</a>--}}
+            {{--@else--}}
+                {{--<a href="{{ url('/login') }}">Login</a>--}}
+                {{--<a href="{{ url('/register_custom') }}">Register</a>--}}
+            {{--@endif--}}
+        {{--</div>--}}
+    {{--@endif--}}
 
         <div class="row">
             <div class="content">
